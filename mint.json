@@ -70,28 +70,35 @@
         "essentials/navigation"
       ]
     },
-    {
-      "group": "API Documentation",
+	{
+      "group": "Voice",
       "pages": [
-        "api-reference/authentication"
+        "api-reference/voice/Add Voice",
+        "api-reference/voice/Edit Voice",
+		"api-reference/voice/Get Voices",
+		"api-reference/voice/Delete Voice",
       ]
     },
     {
-      "group": "Endpoint Examples",
+      "group": "Text to Speech",
       "pages": [
-        "api-reference/endpoint/get",
-        "api-reference/endpoint/create",
-        "api-reference/endpoint/update",
-        "api-reference/endpoint/delete"
+        "api-reference/tts/Text to Speech",
+        "api-reference/tts/Text to Speech Stream"
       ]
     },
     {
-      "group": "Endpoint Examples111",
+      "group": "History",
       "pages": [
-        "api-reference/endpoint1/get",
-        "api-reference/endpoint1/create",
-        "api-reference/endpoint1/update",
-        "api-reference/endpoint1/delete"
+        "api-reference/history/Get TTS History",
+        "api-reference/history/Get TTS History Item",
+        "api-reference/history/Delete TTS History Item",
+        "api-reference/history/Download TTS History Item"
+      ]
+    },
+	{
+      "group": "User",
+      "pages": [
+        "api-reference/user/Get User info"
       ]
     }
   ],
