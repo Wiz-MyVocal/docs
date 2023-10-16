@@ -88,10 +88,10 @@
     {
       "group": "Endpoint Examples111",
       "pages": [
-        "api-reference/endpoint/get",
-        "api-reference/endpoint/create",
-        "api-reference/endpoint/update",
-        "api-reference/endpoint/delete"
+        "api-reference/endpoint1/get",
+        "api-reference/endpoint1/create",
+        "api-reference/endpoint1/update",
+        "api-reference/endpoint1/delete"
       ]
     }
   ],
