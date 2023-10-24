@@ -1,6 +1,6 @@
 ---
 title: "Add Voice"
-api: "POST https://api.mintlify.com/api/user"
+api: "POST https://api.mintlify.com/sound_clone/api/v1/voices"
 description: "This endpoint creates a new user"
 ---
 
@@ -49,26 +49,23 @@ The contents of the user group
 <RequestExample>
 
 ```bash Example Request
-curl --location --request POST 'https://api.mintlify.com/api/user' \
---header 'Content-Type: application/json' \
---header 'Authorization: Token <token>' \
---data-raw '{
-    "current_token": ""
-}'
+curl --location --request POST 'https://api.mintlify.com/sound_clone/api/v1/voices' \
+--header 'Content-Type: multipart/form-data' \
+--header 'accessKey: apiKey' \
+--form 'name="Dalio"' \
+--form 'files=@"/Users/xxx/1.wav"' \
+--form 'files=@"/Users/xxx/2.wav"'
 ```
-
 </RequestExample>
 
 <ResponseExample>
 
 ```json Response
 {
-  "success": 1,
-  "user_group": {
-    "team_id": 3,
-    "token": "<user_group_token_to_auth_dashboard>",
-    "name": "Example 1",
-    "provided_id": "example_1"
+  "code": 1,
+  "message": "Success",
+  "data": {
+    "voiceId": 3
   }
 }
 ```
