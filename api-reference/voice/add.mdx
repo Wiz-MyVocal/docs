@@ -23,41 +23,23 @@ description: "This endpoint creates a new user"
 
 ### Response
 
-<ResponseField name="success" type="number">
+<ResponseField name="code" type="number">
   Indicates whether the call was successful. 1 if successful, 0 if not.
 </ResponseField>
 
-<ResponseField name="user_group" type="object">
+<ResponseField name="message" type="string">
+  Indicates whether the call was successful. 1 if successful, 0 if not.
+</ResponseField>
+
+<ResponseField name="data" type="object">
 
 The contents of the user group
 
 <Expandable title="Toggle object">
 
-<ResponseField name="team_id" type="number">
+<ResponseField name="voiceId" type="string">
   This is the internal ID for this user group. You don't need to record this
   information, since you will not need to use it.
-</ResponseField>
-
-<ResponseField name="token" type="string">
-  This is the user group token (userGroupToken or USER_GROUP_TOKEN) that will be
-  used to identify which user group is viewing the dashboard. You should save
-  this on your end to use when rendering an embedded dashboard.
-</ResponseField>
-
-<ResponseField name="name" type="string">
-  This is the name of the user group provided in the request body.
-</ResponseField>
-
-<ResponseField name="provided_id" type="string">
-  This is the user_group_id provided in the request body.
-</ResponseField>
-
-<ResponseField name="api_environment_tag" type="JSON or null">
-  This is the environment tag of the user group. Possible values are 'Customer'
-  and 'Testing'. User group id's must be unique to each environment, so you can
-  not create multiple user groups with with same id. If you have a production
-  customer and a test user group with the same id, you will be required to label
-  one as 'Customer' and another as 'Testing'
 </ResponseField>
 
 </Expandable>
