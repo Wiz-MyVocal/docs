@@ -4,9 +4,19 @@ api: "POST https://api.mintlify.com/api/user"
 description: "This endpoint creates a new user"
 ---
 
+### Header
+<ParamField header="accessKey"   type="string">
+  This is the current user group token you have for the user group that you want
+  to rotate.
+</ParamField>
+
 ### Body
 
-<ParamField body="current_token" type="string">
+<ParamField body="name" type="string">
+  This is the current user group token you have for the user group that you want
+  to rotate.
+</ParamField>
+<ParamField body="files" type="file">
   This is the current user group token you have for the user group that you want
   to rotate.
 </ParamField>
