@@ -4,20 +4,23 @@ api: "DELETE https://api.mintlify.com/sound_clone/api/v1/voices/{voiceId}"
 description: "This endpoint deletes an existing user."
 ---
 ### Header
-<ParamField header="accessKey"   type="string">
+<ParamField header="accessKey"   type="string" required>
+  This is the current user group token you have for the user group that you want
+  to rotate.
+</ParamField>
+### Path
+<ParamField path="voiceId"   type="string" required>
   This is the current user group token you have for the user group that you want
   to rotate.
 </ParamField>
 
-
-
 ### Response
 
-<ResponseField name="code" type="number">
+<ResponseField name="code" type="number" >
   Indicates whether the call was successful. 1 if successful, 0 if not.
 </ResponseField>
 
-<ResponseField name="message" type="string">
+<ResponseField name="message" type="string" >
   Indicates whether the call was successful. 1 if successful, 0 if not.
 </ResponseField>
 

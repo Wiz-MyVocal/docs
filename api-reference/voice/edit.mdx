@@ -5,29 +5,29 @@ description: "This endpoint creates a new user"
 ---
 
 ### Header
-<ParamField header="accessKey"   type="string">
+<ParamField header="accessKey"   type="string" required>
   This is the current user group token you have for the user group that you want
   to rotate.
 </ParamField>
 
 ### Body
 
-<ParamField body="voiceId" type="string">
+<ParamField body="voiceId" type="string" required>
   This is the current user group token you have for the user group that you want
   to rotate.
 </ParamField>
-<ParamField body="files" type="files">
+<ParamField body="files" type="files" required>
   This is the current user group token you have for the user group that you want
   to rotate.
 </ParamField>
 
 ### Response
 
-<ResponseField name="code" type="number">
+<ResponseField name="code" type="number" >
   Indicates whether the call was successful. 1 if successful, 0 if not.
 </ResponseField>
 
-<ResponseField name="message" type="string">
+<ResponseField name="message" type="string" >
   Indicates whether the call was successful. 1 if successful, 0 if not.
 </ResponseField>
 

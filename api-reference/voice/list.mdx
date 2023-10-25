@@ -4,41 +4,41 @@ api: "GET https://api.mintlify.com/sound_clone/api/v1/voices/list"
 description: "This endpoint gets or creates a new user."
 ---
 ### Header
-<ParamField header="accessKey"   type="string">
+<ParamField header="accessKey"   type="string" required>
   This is the current user group token you have for the user group that you want
   to rotate.
 </ParamField>
 
 
 ### Response
-<ResponseField name="code" type="number">
+<ResponseField name="code" type="number" required>
   Indicates whether the call was successful. 1 if successful, 0 if not.
 </ResponseField>
 
-<ResponseField name="message" type="string">
+<ResponseField name="message" type="string" >
   Indicates whether the call was successful. 1 if successful, 0 if not.
 </ResponseField>
 
-<ResponseField name="data" type="object">
+<ResponseField name="data" type="object" >
 The contents of the user group
     <Expandable title="Toggle object">
         <ResponseField name="voices" type="list">
             This is the internal ID for this user group. You don't need to record this
             information, since you will not need to use it.
             <Expandable title="Toggle object">
-            <ResponseField name="voiceId" type="string">
+            <ResponseField name="voiceId" type="string" >
                 This is the internal ID for this user group. You don't need to record this
                 information, since you will not need to use it.
             </ResponseField>
-            <ResponseField name="voiceName" type="string">
+            <ResponseField name="voiceName" type="string" >
                 This is the internal ID for this user group. You don't need to record this
                 information, since you will not need to use it.
             </ResponseField>
-            <ResponseField name="voiceType" type="string">
+            <ResponseField name="voiceType" type="string" >
                 This is the internal ID for this user group. You don't need to record this
                 information, since you will not need to use it.
             </ResponseField>
-            <ResponseField name="voiceFeature" type="string">
+            <ResponseField name="voiceFeature" type="string" >
             This is the internal ID for this user group. You don't need to record this
             information, since you will not need to use it.
             </ResponseField>
