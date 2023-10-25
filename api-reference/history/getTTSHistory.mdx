@@ -1,6 +1,6 @@
 ---
 title: "Get TTS History Item"
-api: "POST https://www.myvocal.ai/sound_clone/api/v1/tts/url"
+api: "POST https://www.myvocal.ai/sound_clone/api/v1/tts/list"
 description: "This endpoint gets or creates a new user."
 ---
 ### Header
@@ -10,20 +10,12 @@ description: "This endpoint gets or creates a new user."
 </ParamField>
 
 ### Body
-<ParamField name="user" type="User Object">
-  <Expandable title="properties">
-    <ResponseField name="full_name" type="string">
-      The full name of the user
-    </ResponseField>
-
-    <ResponseField name="is_over_21" type="boolean">
-      Whether the user is over 21 years old
-    </ResponseField>
-  </Expandable>
-</ResponseField>
+<ParamField body="limit" type="number">
+</ParamField>
+<ParamField body="startBeforeTTSId" type="string">
+</ParamField>
 
 ### Response
-
 <ResponseField name="code" type="number" required>
   Indicates whether the call was successful. 1 if successful, 0 if not.
 </ResponseField>
