@@ -1,6 +1,6 @@
 ---
 title: "Get TTS History Item"
-api: "POST https://www.myvocal.ai/sound_clone/api/v1/tts/url"
+api: "POST https://api.mintlify.com/sound_clone/sound_clone/api/v1/tts/create"
 description: "This endpoint gets or creates a new user."
 ---
 ### Header
@@ -10,121 +10,67 @@ description: "This endpoint gets or creates a new user."
 </ParamField>
 
 ### Body
-<ParamField name="voiceId"   type="string" required>
-  This is the current user group token
+<ParamField body="voiceId" type="string">
+  This is the current user group token you have for the user group that you want
+  to rotate.
 </ParamField>
-<ParamField name="ttsTitle"   type="string" required>
-  This is the current user group token
+<ParamField body="ttsTitle" type="string">
+  This is the current user group token you have for the user group that you want
+  to rotate.
 </ParamField>
-<ParamField name="ttsText"   type="string" required>
-  This is the current user group token
+<ParamField body="ttsText" type="string">
+  This is the current user group token you have for the user group that you want
+  to rotate.
 </ParamField>
-<ParamField name="language"   type="string" required>
-  This is the current user group token
+<ParamField body="language" type="string">
+  This is the current user group token you have for the user group that you want
+  to rotate.
 </ParamField>
-<ParamField name="voiceSettings"   type="object" required>
-<Expandable title="properties">
-   <ResponseField name="successqweqwe" type="number">
-    11
-  </ResponseField>
+<ParamField body="voiceSettings" type="object">
+<Expandable title="Toggle object">
+    <ParamField body="stability" type="number">
+  This is the current user group token you have for the user group that you want
+  to rotate.
+    </ParamField>
 </Expandable>
+
+  This is the current user group token you have for the user group that you want
+  to rotate.
 </ParamField>
 
 ### Response
+responType stream
 
-<ResponseField name="code" type="number" required>
-  Indicates whether the call was successful. 1 if successful, 0 if not.
-</ResponseField>
-
-<ResponseField name="message" type="string" >
-  Indicates whether the call was successful. 1 if successful, 0 if not.
-</ResponseField>
-
-<ResponseField name="data" type="object" >
-The contents of the user group
-    <Expandable title="Toggle object">
-      <ResponseField name="hasMore" type="boolean" >
-                This is the internal ID for this user group. You don't need to record this
-                information, since you will not need to use it.
-            </ResponseField>
-      <ResponseField name="earliestHistoryItemId" type="String" >
-                This is the internal ID for this user group. You don't need to record this
-                information, since you will not need to use it.
-        </ResponseField>
-        <ResponseField name="history" type="list">
-            This is the internal ID for this user group. You don't need to record this
-            information, since you will not need to use it.
-            <Expandable title="Toggle object">
-            <ResponseField name="voiceId" type="string" >
-                This is the internal ID for this user group. You don't need to record this
-                information, since you will not need to use it.
-            </ResponseField>
-            <ResponseField name="voiceName" type="string" >
-                This is the internal ID for this user group. You don't need to record this
-                information, since you will not need to use it.
-            </ResponseField>
-            <ResponseField name="ttsId" type="string" >
-                This is the internal ID for this user group. You don't need to record this
-                information, since you will not need to use it.
-            </ResponseField>
-            <ResponseField name="ttsTitle" type="string" >
-            This is the internal ID for this user group. You don't need to record this
-            information, since you will not need to use it.
-            </ResponseField>
-            <ResponseField name="ttsText" type="string" >
-            This is the internal ID for this user group. You don't need to record this
-            information, since you will not need to use it.
-            </ResponseField>
-            <ResponseField name="characterCount" type="number" >
-            This is the internal ID for this user group. You don't need to record this
-            information, since you will not need to use it.
-            </ResponseField>
-            <ResponseField name="language" type="string" >
-            This is the internal ID for this user group. You don't need to record this
-            information, since you will not need to use it.
-            </ResponseField>
-            <ResponseField name="itemGeneratedType" type="string" >
-            This is the internal ID for this user group. You don't need to record this
-            information, since you will not need to use it.
-            </ResponseField>
-            </Expandable>
-        </ResponseField>
-    </Expandable>
-</ResponseField>
 
 <RequestExample>
 
 ```bash Example Request
-```bash Example Request
-curl --location --request GET 'https://api.mintlify.com/sound_clone/api/v1/tts/list' \
---header 'Content-Type: application/json' \
+curl -X 'POST' \
+'https://api.mintlify.com/sound_clone/sound_clone/api/v1/tts/create' \
+--header 'accept: audio/mpeg' \
 --header 'accessKey: xxxx'
+--header 'Content-Type: application/json' \
+--data '{
+    "voiceId":"221",
+    "ttsTitle":"222",
+    "ttsText":"hello word",
+    "language":"US_ENGLISH",
+    "voiceSettings":{
+        "stability":0.7
+    }
+}'
 ```
-
 </RequestExample>
 
 <ResponseExample>
 
-```json Response
+```json success
+This response does not have an example.
+```
+```json error 
 {
-  	"code": 1,
-	  "message": "Success",
-    "data":{
-        "hasMore":false,
-        "earliestHistoryItemId":"0",
-        "history":[
-            {
-                "voiceId":"20",
-                "voiceName":"test",
-                "ttsId":"0",
-                "ttsTitle":"",
-                "ttsText":"",
-                "characterCount":"0",
-                "language":"",
-                "itemGeneratedType":""
-            }
-        ]
-    }
+  	"code": -1,
+	"message": "error msg",
 }
 ```
 
