@@ -11,7 +11,6 @@ description: "This endpoint gets or creates a new user."
 
 
 ### Response
-
 <ResponseField name="code" type="number">
   Indicates whether the call was successful. 1 if successful, 0 if not.
 </ResponseField>
@@ -21,44 +20,35 @@ description: "This endpoint gets or creates a new user."
 </ResponseField>
 
 <ResponseField name="data" type="object">
-
 The contents of the user group
+    <Expandable title="Toggle object">
+        <ResponseField name="voices" type="list">
+            This is the internal ID for this user group. You don't need to record this
+            information, since you will not need to use it.
+            <Expandable title="Toggle object">
+            <ResponseField name="voiceId" type="string">
+                This is the internal ID for this user group. You don't need to record this
+                information, since you will not need to use it.
+            </ResponseField>
+            <ResponseField name="voiceName" type="string">
+                This is the internal ID for this user group. You don't need to record this
+                information, since you will not need to use it.
+            </ResponseField>
+            <ResponseField name="voiceType" type="string">
+                This is the internal ID for this user group. You don't need to record this
+                information, since you will not need to use it.
+            </ResponseField>
+            <ResponseField name="voiceFeature" type="string">
+            This is the internal ID for this user group. You don't need to record this
+            information, since you will not need to use it.
+            </ResponseField>
+            </Expandable>
+        </ResponseField>
 
-<Expandable title="Toggle object">
 
-<ResponseField name="voices" type="list">
-  This is the internal ID for this user group. You don't need to record this
-  information, since you will not need to use it.
-  <Expandable title="Toggle object">
 
-<ResponseField name="voiceId" type="string">
-  This is the internal ID for this user group. You don't need to record this
-  information, since you will not need to use it.
+    </Expandable>
 </ResponseField>
-
-<ResponseField name="voiceName" type="string">
-  This is the internal ID for this user group. You don't need to record this
-  information, since you will not need to use it.
-</ResponseField>
-
-<ResponseField name="voiceType" type="string">
-  This is the internal ID for this user group. You don't need to record this
-  information, since you will not need to use it.
-</ResponseField>
-
-<ResponseField name="voiceFeature" type="string">
-  This is the internal ID for this user group. You don't need to record this
-  information, since you will not need to use it.
-</ResponseField>
-</ResponseField>
-
-</Expandable>
-</ResponseField>
-
-</Expandable>
-
-</ResponseField>
-
 <RequestExample>
 
 ```bash Example Request
