@@ -1,6 +1,6 @@
 ---
 title: "Get TTS History Item"
-api: "GET https://api.mintlify.com/sound_clone/api/v1/tts/list"
+api: "POST https://www.myvocal.ai/sound_clone/api/v1/tts/url"
 description: "This endpoint gets or creates a new user."
 ---
 ### Header
@@ -10,24 +10,17 @@ description: "This endpoint gets or creates a new user."
 </ParamField>
 
 ### Body
+<ParamField name="user" type="User Object">
+  <Expandable title="properties">
+    <ResponseField name="full_name" type="string">
+      The full name of the user
+    </ResponseField>
 
-<ParamField body="name" type="string">
-  This is the name of the user group.
-</ParamField>
-
-<ParamField body="user_group_id" type="string">
-  This is the ID you use to identify this user group in your database.
-</ParamField>
-
-<ParamField body="mapping" type="object">
-  This is a JSON mapping of schema id to either the data source that this user group should be
-  associated with or id of the datasource you provided when creating it.
-</ParamField>
-
-<ParamField body="properties" type="object">
-  This is a JSON object for properties assigned to this user group. These will be accessible through
-  variables in the dashboards and SQL editor
-</ParamField>
+    <ResponseField name="is_over_21" type="boolean">
+      Whether the user is over 21 years old
+    </ResponseField>
+  </Expandable>
+</ResponseField>
 
 ### Response
 

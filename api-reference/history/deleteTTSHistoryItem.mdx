@@ -9,8 +9,8 @@ description: "This endpoint deletes an existing user."
   to rotate.
 </ParamField>
 ### Body
-<ParamField body="ttsIds" type="list">
-  This is the current user group token you have for the user group that you want
+<ParamField body="ttsIds" type="array" required>
+ This is the current user group token you have for the user group that you want
   to rotate.
 </ParamField>
 
@@ -33,8 +33,8 @@ curl --location --globoff --request DELETE 'https://www.myvocal.ai/sound_clone/a
 --header 'accessKey: xxxx'
 --data '{
     "ttsIds":[
-        0,
-        1
+        "0",
+        "1"
     ]
 }'
 ```
