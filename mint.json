@@ -5,7 +5,7 @@
     "dark": "/logo/dark.svg",
     "light": "/logo/light.svg"
   },
-  "favicon": "/favicon.png",
+  "favicon": "/favicon.svg",
   "colors": {
     "primary": "#9563FF",
     "light": "#AE87FF",
@@ -18,73 +18,23 @@
       "to": "#9563FF"
     }
   },
-  "topbarLinks": [
-    {
-      "name": "Support",
-      "url": "mailto:hi@mintlify.com"
-    }
-  ],
   "topbarCtaButton": {
     "name": "Dashboard",
-    "url": "https://dashboard.mintlify.com"
+    "url": "https://www.myvocal.ai"
   },
-  "tabs": [
-    {
-      "name": "API Reference",
-      "url": "api-reference"
-    }
-  ],
-  "anchors": [
-    {
-      "name": "Documentation",
-      "icon": "book-open-cover",
-      "url": "https://mintlify.com/docs"
-    },
-    {
-      "name": "Community",
-      "icon": "slack",
-      "url": "https://mintlify.com/community"
-    },
-    {
-      "name": "Blog",
-      "icon": "newspaper",
-      "url": "https://mintlify.com/blog"
-    }
-  ],
   "navigation": [
     {
-      "group": "Get Started",
-      "pages": [
-        "introduction",
-        "quickstart",
-        "development"
-      ]
-    },
-    {
-      "group": "Essentials",
-      "pages": [
-        "essentials/markdown",
-        "essentials/code",
-        "essentials/images",
-        "essentials/settings",
-        "essentials/navigation"
-      ]
-    },
-	{
       "group": "Voice",
       "pages": [
         "api-reference/voice/add",
         "api-reference/voice/edit",
-		"api-reference/voice/list",
-		"api-reference/voice/delete"
+        "api-reference/voice/list",
+        "api-reference/voice/delete"
       ]
     },
     {
       "group": "Text to Speech",
-      "pages": [
-        "api-reference/tts/get",
-        "api-reference/tts/getStream"
-      ]
+      "pages": ["api-reference/tts/get", "api-reference/tts/getStream"]
     },
     {
       "group": "History",
@@ -95,16 +45,9 @@
         "api-reference/history/downloadTTSHistoryItem"
       ]
     },
-	{
+    {
       "group": "User",
-      "pages": [
-        "api-reference/user/getInfo"
-      ]
+      "pages": ["api-reference/user/getInfo"]
     }
-  ],
-  "footerSocials": {
-    "twitter": "https://twitter.com/mintlify",
-    "github": "https://github.com/mintlify",
-    "linkedin": "https://www.linkedin.com/company/mintsearch"
-  }
+  ]
 }
