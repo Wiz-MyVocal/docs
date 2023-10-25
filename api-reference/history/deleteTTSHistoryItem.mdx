@@ -1,46 +1,51 @@
 ---
-title: "Delete TTS History Item"
-api: "DELETE https://api.mintlify.com/api/user"
+title: "Delete   deleteTTS"
+api: "DELETE https://www.myvocal.ai/sound_clone/api/v1/tts"
 description: "This endpoint deletes an existing user."
 ---
-
-### Body
-
-<ParamField body="data_source_provided_id" type="string">
-  The data source ID provided in the data tab may be used to identify the data
-  source for the user group
+### Header
+<ParamField header="accessKey"   type="string" required>
+  This is the current user group token you have for the user group that you want
+  to rotate.
 </ParamField>
-
-<ParamField body="current_token" type="string">
-  This is the current user group token you have for the user group you want to
-  delete
+### Body
+<ParamField body="ttsIds" type="list">
+  This is the current user group token you have for the user group that you want
+  to rotate.
 </ParamField>
 
 ### Response
 
-<ResponseField name="success" type="number">
+<ResponseField name="code" type="number" >
   Indicates whether the call was successful. 1 if successful, 0 if not.
 </ResponseField>
+
+<ResponseField name="message" type="string" >
+  Indicates whether the call was successful. 1 if successful, 0 if not.
+</ResponseField>
+
 
 <RequestExample>
 
 ```bash Example Request
-curl --location --request DELETE 'https://api.mintlify.com/api/user' \
+curl --location --globoff --request DELETE 'https://www.myvocal.ai/sound_clone/api/v1/tts' \
 --header 'Content-Type: application/json' \
---header 'Authorization: Token <token>' \
---data-raw '{
-		"user_group_id": "example_1"
-		"current_token": "abcdef"
+--header 'accessKey: xxxx'
+--data '{
+    "ttsIds":[
+        0,
+        1
+    ]
 }'
 ```
-
 </RequestExample>
 
 <ResponseExample>
 
 ```json Response
 {
-  "success": 1
+  "code": 1,
+  "message": "Success",
 }
 ```
 

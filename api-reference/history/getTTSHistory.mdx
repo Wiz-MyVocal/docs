@@ -31,59 +31,73 @@ description: "This endpoint gets or creates a new user."
 
 ### Response
 
-<ResponseField name="success" type="number">
+<ResponseField name="code" type="number" required>
   Indicates whether the call was successful. 1 if successful, 0 if not.
 </ResponseField>
 
-<ResponseField name="new_user_group" type="boolean">
-  Indicates whether a new user group was created.
+<ResponseField name="message" type="string" >
+  Indicates whether the call was successful. 1 if successful, 0 if not.
 </ResponseField>
 
-<ResponseField name="user_group" type="object">
-
+<ResponseField name="data" type="object" >
 The contents of the user group
-
-<Expandable title="Toggle object">
-
-<ResponseField name="team_id" type="number">
-  This is the internal ID for this user group. You don't need to record this information, since
-  you will not need to use it.
-</ResponseField>
-
-<ResponseField name="token" type="string">
-  This is the user group token (userGroupToken or USER_GROUP_TOKEN) that will be used to identify
-  which user group is viewing the dashboard. You should save this on your end to use when rendering
-  an embedded dashboard.
-</ResponseField>
-
-<ResponseField name="name" type="string">
-  This is the name of the user group provided in the request body.
-</ResponseField>
-
-<ResponseField name="provided_id" type="string">
-  This is the user_group_id provided in the request body.
-</ResponseField>
-
-<ResponseField name="properties" type="JSON or null">
-  This is the properties object if it was provided in the request body
-</ResponseField>
-
-</Expandable>
-
+    <Expandable title="Toggle object">
+      <ResponseField name="hasMore" type="boolean" >
+                This is the internal ID for this user group. You don't need to record this
+                information, since you will not need to use it.
+            </ResponseField>
+      <ResponseField name="earliestHistoryItemId" type="String" >
+                This is the internal ID for this user group. You don't need to record this
+                information, since you will not need to use it.
+        </ResponseField>
+        <ResponseField name="history" type="list">
+            This is the internal ID for this user group. You don't need to record this
+            information, since you will not need to use it.
+            <Expandable title="Toggle object">
+            <ResponseField name="voiceId" type="string" >
+                This is the internal ID for this user group. You don't need to record this
+                information, since you will not need to use it.
+            </ResponseField>
+            <ResponseField name="voiceName" type="string" >
+                This is the internal ID for this user group. You don't need to record this
+                information, since you will not need to use it.
+            </ResponseField>
+            <ResponseField name="ttsId" type="string" >
+                This is the internal ID for this user group. You don't need to record this
+                information, since you will not need to use it.
+            </ResponseField>
+            <ResponseField name="ttsTitle" type="string" >
+            This is the internal ID for this user group. You don't need to record this
+            information, since you will not need to use it.
+            </ResponseField>
+            <ResponseField name="ttsText" type="string" >
+            This is the internal ID for this user group. You don't need to record this
+            information, since you will not need to use it.
+            </ResponseField>
+            <ResponseField name="characterCount" type="number" >
+            This is the internal ID for this user group. You don't need to record this
+            information, since you will not need to use it.
+            </ResponseField>
+            <ResponseField name="language" type="string" >
+            This is the internal ID for this user group. You don't need to record this
+            information, since you will not need to use it.
+            </ResponseField>
+            <ResponseField name="itemGeneratedType" type="string" >
+            This is the internal ID for this user group. You don't need to record this
+            information, since you will not need to use it.
+            </ResponseField>
+            </Expandable>
+        </ResponseField>
+    </Expandable>
 </ResponseField>
 
 <RequestExample>
 
 ```bash Example Request
-curl --location --request GET 'https://api.mintlify.com/api/user' \
+```bash Example Request
+curl --location --request GET 'https://api.mintlify.com/sound_clone/api/v1/tts/list' \
 --header 'Content-Type: application/json' \
---header 'Authorization: Token <token>' \
---data-raw '{
-    "user_group_id": "example_1",
-    "name": "Example 1",
-    "mapping": {"40": "213", "134": "386"},
-    "properties": {"filterValue": "value"}
-}'
+--header 'accessKey: xxxx'
 ```
 
 </RequestExample>
@@ -92,14 +106,24 @@ curl --location --request GET 'https://api.mintlify.com/api/user' \
 
 ```json Response
 {
-  "success": 1,
-  "new_user_group": true,
-  "user_group": {
-    "team_id": 3,
-    "token": "<user_group_token_to_auth_dashboard>",
-    "name": "Example 1",
-    "provided_id": "example_1"
-  }
+  	"code": 1,
+	  "message": "Success",
+    "data":{
+        "hasMore":false,
+        "earliestHistoryItemId":"0",
+        "history":[
+            {
+                "voiceId":"20",
+                "voiceName":"test",
+                "ttsId":"0",
+                "ttsTitle":"",
+                "ttsText":"",
+                "characterCount":"0",
+                "language":"",
+                "itemGeneratedType":""
+            }
+        ]
+    }
 }
 ```
 
