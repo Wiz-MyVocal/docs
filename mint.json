@@ -29,7 +29,9 @@
         "api-reference/voice/add",
         "api-reference/voice/edit",
         "api-reference/voice/list",
-        "api-reference/voice/delete"
+        "api-reference/voice/delete",
+        "api-reference/voice/pincerVoice",
+        "api-reference/voice/updateVoiceName"
       ]
     },
     {
