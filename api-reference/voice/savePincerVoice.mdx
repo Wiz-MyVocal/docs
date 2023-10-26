@@ -1,0 +1,52 @@
+---
+title: "Edit Voice for TTS"
+api: "PUT https://www.myvocal.ai/sound_clone/api/v1/voices/rename/{voiceId}"
+description: "Edit a custom voice created by you. You can upload more files to improve your voice."
+---
+
+### Header
+<ParamField header="accessKey"   type="string" required>
+  You can copy your api-key on https://www.myvocal.ai/profile after you have subscribed to Pro or Business Plan.
+</ParamField>
+
+### Body
+
+<ParamField body="voiceId" type="string" required>
+  Your voiceId
+</ParamField>
+<ParamField body="name" type="string" required>
+xxxxx
+</ParamField>
+
+### Response
+
+<ResponseField name="code" type="number" >
+  Indicates whether the call was successful. 1 if successful.
+</ResponseField>
+
+<ResponseField name="message" type="string" >
+  When an exception occurs, specific exception information will be provided in the message.
+</ResponseField>
+
+
+<RequestExample>
+
+```bash Example Request
+curl --location --request PUT 'https://api.mintlify.com/sound_clone/api/v1/voices' \
+--header 'Content-Type: multipart/form-data' \
+--header 'accessKey: apiKey' \
+--form 'voiceId="213"' \
+--form 'name="test"' 
+```
+</RequestExample>
+
+<ResponseExample>
+
+```json Response
+{
+  "code": 1,
+  "message": "Success"
+}
+```
+
+</ResponseExample>

@@ -31,6 +31,7 @@
         "api-reference/voice/list",
         "api-reference/voice/delete",
         "api-reference/voice/pincerVoice",
+        "api-reference/voice/savePincerVoice",
         "api-reference/voice/updateVoiceName"
       ]
     },
@@ -42,7 +43,6 @@
       "group": "History",
       "pages": [
         "api-reference/history/getTTSHistory",
-        "api-reference/history/getTTSHistoryItem",
         "api-reference/history/deleteTTSHistoryItem",
         "api-reference/history/downloadTTSHistoryItem"
       ]
