@@ -51,5 +51,8 @@
       "group": "User",
       "pages": ["api-reference/user/getInfo"]
     }
-  ]
+  ],
+  "footerSocials": {
+    "youtube": "https://www.youtube.com/@myvocalai"
+  }
 }
