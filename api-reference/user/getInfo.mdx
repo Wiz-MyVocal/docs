@@ -25,11 +25,13 @@ Includes specific data.
             Your current subscription plan.
         </ResponseField>
         <ResponseField name="subscriptionStatus" type="string">
-            Your current subscription status. If you haven't cancel your subsciption, the status will be "active", if you have cancelled your subcription, the status will be "cancellation upon expiration" before the subscription expired.
+         <div>Your current subscription status:</div>
+         <div>If you haven't cancel your subsciption, the status will be "active", </div>
+         <div>If you have cancelled your subcription, the status will be "cancellation upon expiration" before the subscription expired.</div>
         </ResponseField>
         <ResponseField name="subscriptionResetInDays" type="number">
-            If you haven't cancelled your subscription, this field means the countdown days for your plan benefits to be updated.
-            If you have cancelled your subscription, this field means the countdown days for your plan to be downgraded to a free user.
+            <div>If you haven't cancelled your subscription, this parameter means the countdown days for your plan benefits to be updated.</div>
+            <div>If you have cancelled your subscription, this parameter means the countdown days for your plan to be downgraded to a free user.</div>
         </ResponseField>
         <ResponseField name="benefit" type="object">
         <Expandable title="Toggle object">

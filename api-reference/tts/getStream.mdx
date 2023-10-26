@@ -1,5 +1,5 @@
 ---
-title: "Get TTS History Item"
+title: "Text-to-Speech Streaming"
 api: "POST https://api.mintlify.com/sound_clone/sound_clone/api/v1/tts/create"
 description: "This endpoint gets or creates a new user."
 ---
@@ -10,30 +10,35 @@ description: "This endpoint gets or creates a new user."
 
 ### Body
 <ParamField body="voiceId" type="string">
-  Your voiceId.
+  Your voiceId
 </ParamField>
 <ParamField body="ttsTitle" type="string">
-  This is the current user group token you have for the user group that you want
-  to rotate.
+  Please do not exceed 32 characters in length. If this parameter is null, it will all default to "Untitled_TTS" 
 </ParamField>
 <ParamField body="ttsText" type="string">
-  This is the current user group token you have for the user group that you want
-  to rotate.
+  The maximum number of characters you can input at once depends on the benefits of your subscription plan.
 </ParamField>
 <ParamField body="language" type="string">
-  This is the current user group token you have for the user group that you want
-  to rotate.
+  Please select form: 
+  <div><b>us_english</b></div>
+  <div><b>english_original_accent</b></div>
+  <div><b>spanish</b></div>
+  <div><b>portguese</b></div>
+  <div><b>german</b></div>
+  <div><b>french</b></div>
+  <div><b>arabic</b></div>
 </ParamField>
 <ParamField body="voiceSettings" type="object">
+For some advanced settings, it is generally recommended to use the suggested parameters.
 <Expandable title="Toggle object">
     <ParamField body="stability" type="number">
-  This is the current user group token you have for the user group that you want
-  to rotate.
+     <div><b>a decimal between 0 and 1, in increments of 0.1, with a recommended default value of 0.7.</b></div>
+     <div>When your parameters are set lower, the emotional variation of the TTS audio will be more abundant. Even for the same text, the effects generated multiple times will be different. You can choose the most suitable one by generating the same text's TTS audio multiple times.</div>
+     <div>When your parameters are set higher, the emotion of the TTS audio will tend to be consistent.</div>
+      
     </ParamField>
 </Expandable>
 
-  This is the current user group token you have for the user group that you want
-  to rotate.
 </ParamField>
 
 ### Response

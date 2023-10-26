@@ -1,27 +1,25 @@
 ---
 title: "Delete   deleteTTS"
 api: "DELETE https://www.myvocal.ai/sound_clone/api/v1/tts"
-description: "This endpoint deletes an existing user."
+description: "Delete up to 500 tts history items once by tts_id."
 ---
 ### Header
 <ParamField header="accessKey"   type="string" required>
-  This is the current user group token you have for the user group that you want
-  to rotate.
+  You can copy your api-key on https://www.myvocal.ai/profile after you have subscribed to Pro or Business Plan.
 </ParamField>
 ### Body
 <ParamField body="ttsIds" type="array" required>
- This is the current user group token you have for the user group that you want
-  to rotate.
+ You can provide up to 500 Ids at a time.
 </ParamField>
 
 ### Response
 
 <ResponseField name="code" type="number" >
-  Indicates whether the call was successful. 1 if successful, 0 if not.
+  Indicates whether the call was successful. 1 if successful.
 </ResponseField>
 
 <ResponseField name="message" type="string" >
-  Indicates whether the call was successful. 1 if successful, 0 if not.
+  When an exception occurs, specific exception information will be provided in the message.
 </ResponseField>
 
 

@@ -1,38 +1,36 @@
 ---
-title: "Get TTS History Item"
+title: "Get TTS History Url"
 api: "GET https://api.mintlify.com/sound_clone/api/v1/tts/list"
-description: "This endpoint gets or creates a new user."
+description: "Get tts history items' audio url ."
 ---
 ### Header
 <ParamField header="accessKey"   type="string" required>
-  This is the current user group token you have for the user group that you want
-  to rotate.
+  You can copy your api-key on https://www.myvocal.ai/profile after you have subscribed to Pro or Business Plan.
 </ParamField>
 
 ### Body
 <ParamField body="ttsIds" type="array" required>
- This is the current user group token you have for the user group that you want
-  to rotate.
+ You can provide up to 1,000 Ids at a time.
 </ParamField>
 
 ### Response
 
 <ResponseField name="code" type="number" required>
-  Indicates whether the call was successful. 1 if successful, 0 if not.
+  Indicates whether the call was successful. 1 if successful.
 </ResponseField>
 
 <ResponseField name="message" type="string" >
-  Indicates whether the call was successful. 1 if successful, 0 if not.
+  When an exception occurs, specific exception information will be provided in the message.
 </ResponseField>
 
 <ResponseField name="data" type="array">
   <Expandable title="Toggle object">
    
   <ResponseField name="ttsId" type="string">
-      Indicates whether the call was successful. 1 if successful, 0 if not.
+      Your tts id.
   </ResponseField>
    <ResponseField name="ttsUrl" type="string">
-     Indicates whether the call was successful. 1 if successful, 0 if not.
+     The audio file url corresponding to ttsId.
   </ResponseField>
   </Expandable>
 </ResponseField>
