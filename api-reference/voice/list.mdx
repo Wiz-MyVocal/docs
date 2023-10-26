@@ -1,46 +1,44 @@
 ---
 title: "Get Voices"
 api: "GET https://api.mintlify.com/sound_clone/api/v1/voices/list"
-description: "This endpoint gets or creates a new user."
+description: "Return metadata about a specific voice."
 ---
 ### Header
 <ParamField header="accessKey"   type="string" required>
-  This is the current user group token you have for the user group that you want
-  to rotate.
+  You can copy your api-key on https://www.myvocal.ai/profile after you have subscribed to Pro or Business Plan.
 </ParamField>
 
 
 ### Response
 <ResponseField name="code" type="number" required>
-  Indicates whether the call was successful. 1 if successful, 0 if not.
+  Indicates whether the call was successful. 1 if successful.
 </ResponseField>
 
 <ResponseField name="message" type="string" >
-  Indicates whether the call was successful. 1 if successful, 0 if not.
+  When an exception occurs, specific exception information will be provided in the message.
 </ResponseField>
 
 <ResponseField name="data" type="object" >
-The contents of the user group
+Includes specific data.
     <Expandable title="Toggle object">
         <ResponseField name="voices" type="list">
-            This is the internal ID for this user group. You don't need to record this
-            information, since you will not need to use it.
+            All available voices under the current API-Key, including Premade voices provided by Myvocal, and Custom voices you created on the website and in the API.
             <Expandable title="Toggle object">
             <ResponseField name="voiceId" type="string" >
-                This is the internal ID for this user group. You don't need to record this
-                information, since you will not need to use it.
+                Your voiceId
             </ResponseField>
             <ResponseField name="voiceName" type="string" >
-                This is the internal ID for this user group. You don't need to record this
-                information, since you will not need to use it.
+                Your voiceName
             </ResponseField>
             <ResponseField name="voiceType" type="string" >
-                This is the internal ID for this user group. You don't need to record this
-                information, since you will not need to use it.
+                cloned: create the voice by recording online or upload audio files.
+                designed: create the voice by voice design
             </ResponseField>
             <ResponseField name="voiceFeature" type="string" >
-            This is the internal ID for this user group. You don't need to record this
-            information, since you will not need to use it.
+            Text-to-Speech or AI Cover
+            </ResponseField>
+            <ResponseField name="voiceGenerateSource" type="string" >
+            web or api
             </ResponseField>
             </Expandable>
         </ResponseField>
@@ -68,6 +66,7 @@ curl --location 'https://api.mintlify.com/sound_clone/api/v1/voices/list' \
 				"voiceName": "name1",
 				"voiceType": "cloned",
 				"voiceFeature": "tts"
+                "voiceGenerateSource": "web"
 			}
 
 		]

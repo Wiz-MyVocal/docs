@@ -5,60 +5,51 @@ description: "This endpoint gets or creates a new user."
 ---
 ### Header
 <ParamField header="accessKey"   type="string" required>
-  This is the current user group token you have for the user group that you want
-  to rotate.
+  You can copy your api-key on https://www.myvocal.ai/profile after you have subscribed to Pro or Business Plan.
 </ParamField>
 
 
 ### Response
 <ResponseField name="code" type="number">
-  Indicates whether the call was successful. 1 if successful, 0 if not.
+  Indicates whether the call was successful. 1 if successful.
 </ResponseField>
 
 <ResponseField name="message" type="string">
-  Indicates whether the call was successful. 1 if successful, 0 if not.
+  When an exception occurs, specific exception information will be provided in the message.
 </ResponseField>
 
 <ResponseField name="data" type="object">
-The contents of the user group
+Includes specific data.
     <Expandable title="Toggle object">
         <ResponseField name="subscriptionPlan" type="string">
-            This is the internal ID for this user group. You don't need to record this
-            information, since you will not need to use it.
+            Your current subscription plan.
         </ResponseField>
         <ResponseField name="subscriptionStatus" type="string">
-            This is the internal ID for this user group. You don't need to record this
-            information, since you will not need to use it.
+            Your current subscription status. If you haven't cancel your subsciption, the status will be "active", if you have cancelled your subcription, the status will be "cancellation upon expiration" before the subscription expired.
         </ResponseField>
         <ResponseField name="subscriptionResetInDays" type="number">
-            This is the internal ID for this user group. You don't need to record this
-            information, since you will not need to use it.
+            If you haven't cancelled your subscription, this field means the countdown days for your plan benefits to be updated.
+            If you have cancelled your subscription, this field means the countdown days for your plan to be downgraded to a free user.
         </ResponseField>
         <ResponseField name="benefit" type="object">
         <Expandable title="Toggle object">
         <ResponseField name="customVoiceGenerated" type="number">
-            This is the internal ID for this user group. You don't need to record this
-            information, since you will not need to use it.
+            The number of custom voices you have created through the website or API.
         </ResponseField>
         <ResponseField name="customVoiceLimit" type="number">
-            This is the internal ID for this user group. You don't need to record this
-            information, since you will not need to use it.
+            The maximum number of custom voices you can create with your subscription plan.
         </ResponseField>
         <ResponseField name="planTtsCharactersUsed" type="number">
-            This is the internal ID for this user group. You don't need to record this
-            information, since you will not need to use it.
+            The number of TTS characters you have used within your subscription plan.
         </ResponseField>
         <ResponseField name="planTtsCharacters" type="number">
-            This is the internal ID for this user group. You don't need to record this
-            information, since you will not need to use it.
+            The maximum number of TTS characters within your subscription plan.
         </ResponseField>
         <ResponseField name="additionalTtsCharactersUsed" type="number">
-            This is the internal ID for this user group. You don't need to record this
-            information, since you will not need to use it.
+            The number of TTS characters you have used without your subscription plan.
         </ResponseField>
         <ResponseField name="additionalTtsCharacters" type="number">
-            This is the internal ID for this user group. You don't need to record this
-            information, since you will not need to use it.
+            The number of TTS characters you have purchased without your subscription plan.
         </ResponseField>
         </Expandable>
 

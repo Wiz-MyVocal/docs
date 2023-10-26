@@ -1,34 +1,31 @@
 ---
-title: "Edit Voice"
+title: "Edit Voice for TTS"
 api: "PUT https://api.mintlify.com/sound_clone/api/v1/voices"
-description: "This endpoint creates a new user"
+description: "Edit a custom voice created by you. You can upload more files to improve your voice."
 ---
 
 ### Header
 <ParamField header="accessKey"   type="string" required>
-  This is the current user group token you have for the user group that you want
-  to rotate.
+  You can copy your api-key on https://www.myvocal.ai/profile after you have subscribed to Pro or Business Plan.
 </ParamField>
 
 ### Body
 
 <ParamField body="voiceId" type="string" required>
-  This is the current user group token you have for the user group that you want
-  to rotate.
+  Your voiceId
 </ParamField>
 <ParamField body="files" type="files" required>
-  This is the current user group token you have for the user group that you want
-  to rotate.
+  Please provide mp3/wav/m4a files. A single file cannot exceed 10MB, and up to 24 files can be uploaded (including files provided when you add voice).
 </ParamField>
 
 ### Response
 
 <ResponseField name="code" type="number" >
-  Indicates whether the call was successful. 1 if successful, 0 if not.
+  Indicates whether the call was successful. 1 if successful.
 </ResponseField>
 
 <ResponseField name="message" type="string" >
-  Indicates whether the call was successful. 1 if successful, 0 if not.
+  When an exception occurs, specific exception information will be provided in the message.
 </ResponseField>
 
 

@@ -1,45 +1,41 @@
 ---
-title: "Add Voice"
+title: "Add Voice for TTS"
 api: "POST https://api.mintlify.com/sound_clone/api/v1/voices"
-description: "This endpoint creates a new user"
+description: "Create a new custom voice for Text-to-Speech function"
 ---
 
 ### Header
 <ParamField header="accessKey"   type="string" required>
-  This is the current user group token you have for the user group that you want
-  to rotate.
+  You can copy your api-key on https://www.myvocal.ai/profile after you have subscribed to Pro or Business Plan.
 </ParamField>
 
 ### Body
 
-<ParamField body="name" type="string" required>
-  This is the current user group token you have for the user group that you want
-  to rotate.
+<ParamField body="voiceName" type="string" required>
+  Please do not exceed 32 characters in length.
 </ParamField>
 <ParamField body="files" type="files" required>
-  This is the current user group token you have for the user group that you want
-  to rotate.
+  Please provide mp3/wav/m4a files. A single file cannot exceed 10MB, and up to 24 files can be uploaded.
 </ParamField>
 
 ### Response
 
 <ResponseField name="code" type="number">
-  Indicates whether the call was successful. 1 if successful, 0 if not.
+  Indicates whether the call was successful. 1 if successful.
 </ResponseField>
 
 <ResponseField name="message" type="string">
-  Indicates whether the call was successful. 1 if successful, 0 if not.
+  When an exception occurs, specific exception information will be provided in the message.
 </ResponseField>
 
 <ResponseField name="data" type="object">
 
-The contents of the user group
+Includes specific data.
 
 <Expandable title="Toggle object">
 
 <ResponseField name="voiceId" type="string">
-  This is the internal ID for this user group. You don't need to record this
-  information, since you will not need to use it.
+  When you need to use TTS or other features, voiceId needs to be provided.
 </ResponseField>
 
 </Expandable>
@@ -52,7 +48,7 @@ The contents of the user group
 curl --location --request POST 'https://api.mintlify.com/sound_clone/api/v1/voices' \
 --header 'Content-Type: multipart/form-data' \
 --header 'accessKey: apiKey' \
---form 'name="Dalio"' \
+--form 'voiceName="MyVocal"' \
 --form 'files=@"/Users/xxx/1.wav"' \
 --form 'files=@"/Users/xxx/2.wav"'
 ```
