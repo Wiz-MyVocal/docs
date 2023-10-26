@@ -1,6 +1,6 @@
 ---
 title: "Edit Voice for TTS"
-api: "PUT https://www.myvocal.ai/sound_clone/api/v1/voices/rename/{voiceId}"
+api: "POST https://www.myvocal.ai/sound_clone/api/v1/voices/generation/save"
 description: "Edit a custom voice created by you. You can upload more files to improve your voice."
 ---
 
@@ -10,42 +10,73 @@ description: "Edit a custom voice created by you. You can upload more files to i
 </ParamField>
 
 ### Body
-
-<ParamField body="voiceId" type="string" required>
+<ParamField body="name" type="string" required>
   Your voiceId
 </ParamField>
-<ParamField body="name" type="string" required>
+<ParamField body="generatedVoiceId" type="string" required>
 xxxxx
 </ParamField>
 
-### Response
+<ParamField body="labels" type="string" required>
+  Your voiceId
+</ParamField>
 
-<ResponseField name="code" type="number" >
+
+
+
+### Response
+<ResponseField name="code" type="number">
   Indicates whether the call was successful. 1 if successful.
 </ResponseField>
 
-<ResponseField name="message" type="string" >
+<ResponseField name="message" type="string">
   When an exception occurs, specific exception information will be provided in the message.
+</ResponseField>
+
+<ResponseField name="data" type="object">
+
+Includes specific data.
+
+<Expandable title="Toggle object">
+
+<ResponseField name="voiceId" type="string">
+  When you need to use TTS or other features, voiceId needs to be provided.
+</ResponseField>
+
+</Expandable>
+
 </ResponseField>
 
 
 <RequestExample>
 
 ```bash Example Request
-curl --location --request PUT 'https://api.mintlify.com/sound_clone/api/v1/voices' \
+curl --location --request POST 'https://www.myvocal.ai/sound_clone/api/v1/voices/generation/save' \
 --header 'Content-Type: multipart/form-data' \
 --header 'accessKey: apiKey' \
---form 'voiceId="213"' \
---form 'name="test"' 
+--data '{
+    "generatedVoiceId":"SXlHS36r5MTu5BATz6nd",
+    "name":"徐融捏的声音",
+    "labels":"{\"gender\":\"female\",\"accent\":\"indian\",\"age\":\"old\"}"
+}'
 ```
 </RequestExample>
 
 <ResponseExample>
 
-```json Response
+```json success
 {
   "code": 1,
-  "message": "Success"
+  "message": "Success",
+  "data": {
+    "voiceId": 3
+  }
+}
+```
+```json error 
+{
+  	"code": -1,
+	"message": "error msg",
 }
 ```
 

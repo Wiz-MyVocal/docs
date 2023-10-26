@@ -1,6 +1,6 @@
 ---
 title: "Edit Voice for TTS"
-api: "PUT https://www.myvocal.ai/sound_clone/api/v1/voices/rename/{voiceId}"
+api: "POST https://www.myvocal.ai/sound_clone/api/v1/voices/generation/generate"
 description: "Edit a custom voice created by you. You can upload more files to improve your voice."
 ---
 
@@ -10,42 +10,54 @@ description: "Edit a custom voice created by you. You can upload more files to i
 </ParamField>
 
 ### Body
-
-<ParamField body="voiceId" type="string" required>
+<ParamField body="text" type="string" required>
   Your voiceId
 </ParamField>
-<ParamField body="name" type="string" required>
+<ParamField body="gender" type="string" required>
 xxxxx
 </ParamField>
 
+<ParamField body="accent" type="string" required>
+  Your voiceId
+</ParamField>
+
+<ParamField body="age" type="string" required>
+  Your voiceId
+</ParamField>
+<ParamField body="accentStrength" type="string" required>
+  Your voiceId
+</ParamField>
+
+
 ### Response
-
-<ResponseField name="code" type="number" >
-  Indicates whether the call was successful. 1 if successful.
-</ResponseField>
-
-<ResponseField name="message" type="string" >
-  When an exception occurs, specific exception information will be provided in the message.
-</ResponseField>
+音频流
 
 
 <RequestExample>
 
 ```bash Example Request
 curl --location --request PUT 'https://api.mintlify.com/sound_clone/api/v1/voices' \
---header 'Content-Type: multipart/form-data' \
---header 'accessKey: apiKey' \
---form 'voiceId="213"' \
---form 'name="test"' 
+--header 'accessKey: xxxx' \
+--header 'Content-Type: application/json' \
+--data '{
+	"text": "The client interacts with users through mobile devices, while the server is responsible for data  in",
+	"gender": "female",
+	"accent": "indian",
+	"age": "old",
+	"accentStrength": 1.4
+}'
 ```
 </RequestExample>
 
 <ResponseExample>
 
-```json Response
+```json success
+This response does not have an example.
+```
+```json error 
 {
-  "code": 1,
-  "message": "Success"
+  	"code": -1,
+	"message": "error msg",
 }
 ```
 
