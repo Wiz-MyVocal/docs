@@ -1,7 +1,7 @@
 ---
 title: "Get TTS History Item"
 api: "POST https://www.myvocal.ai/sound_clone/api/v1/tts/list"
-description: "This endpoint gets or creates a new user."
+description: "Return metadata about all your generated tts audio."
 ---
 ### Header
 <ParamField header="accessKey"   type="string" required>
@@ -14,6 +14,8 @@ description: "This endpoint gets or creates a new user."
 <div>If this parameter is empty, the default value is 10.</div>
 </ParamField>
 <ParamField body="startBeforeTTSId" type="string">
+<div>If this parameter is provided, we will start tracing back to earlier TTS History from this TTS item.</div>
+<div>If this parameter is empty, then we will default to tracing back directly from the most recent data.</div>
 </ParamField>
 
 ### Response
@@ -26,51 +28,41 @@ description: "This endpoint gets or creates a new user."
 </ResponseField>
 
 <ResponseField name="data" type="object" >
-The contents of the user group
+Includes specific data.
     <Expandable title="Toggle object">
       <ResponseField name="hasMore" type="boolean" >
-                This is the internal ID for this user group. You don't need to record this
-                information, since you will not need to use it.
+                <div>If there is no earlier created TTS item, then callback 1</div>
+                <div>If there are still earlier created TTS items, then callback 0</div>
             </ResponseField>
       <ResponseField name="earliestHistoryItemId" type="String" >
-                This is the internal ID for this user group. You don't need to record this
-                information, since you will not need to use it.
+                The earliest ttsid in this callback.
         </ResponseField>
         <ResponseField name="history" type="list">
-            This is the internal ID for this user group. You don't need to record this
-            information, since you will not need to use it.
+                The specific info of TTS history queried this time.
             <Expandable title="Toggle object">
-            <ResponseField name="voiceId" type="string" >
-                This is the internal ID for this user group. You don't need to record this
-                information, since you will not need to use it.
-            </ResponseField>
-            <ResponseField name="voiceName" type="string" >
-                This is the internal ID for this user group. You don't need to record this
-                information, since you will not need to use it.
-            </ResponseField>
             <ResponseField name="ttsId" type="string" >
-                This is the internal ID for this user group. You don't need to record this
-                information, since you will not need to use it.
+                tts id
             </ResponseField>
             <ResponseField name="ttsTitle" type="string" >
-            This is the internal ID for this user group. You don't need to record this
-            information, since you will not need to use it.
+                tts title
             </ResponseField>
             <ResponseField name="ttsText" type="string" >
-            This is the internal ID for this user group. You don't need to record this
-            information, since you will not need to use it.
+            tts content
             </ResponseField>
             <ResponseField name="characterCount" type="number" >
-            This is the internal ID for this user group. You don't need to record this
-            information, since you will not need to use it.
+            character count of this TTS item.
             </ResponseField>
             <ResponseField name="language" type="string" >
-            This is the internal ID for this user group. You don't need to record this
-            information, since you will not need to use it.
+            chosen language
             </ResponseField>
             <ResponseField name="itemGeneratedType" type="string" >
-            This is the internal ID for this user group. You don't need to record this
-            information, since you will not need to use it.
+            web or api
+            </ResponseField>
+            <ResponseField name="voiceId" type="string" >
+                The voiceid of the voice used to generate this TTS
+            </ResponseField>
+            <ResponseField name="voiceName" type="string" >
+                TThe voicename of the voice used to generate this TTS.
             </ResponseField>
             </Expandable>
         </ResponseField>

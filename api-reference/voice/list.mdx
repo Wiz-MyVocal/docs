@@ -1,6 +1,6 @@
 ---
 title: "Get Voices"
-api: "GET https://api.mintlify.com/sound_clone/api/v1/voices/list"
+api: "GET https://api.mintlify.com/sound_clone/api/v1/voices"
 description: "Return metadata about a specific voice."
 ---
 ### Header
@@ -31,8 +31,8 @@ Includes specific data.
                 Your voiceName
             </ResponseField>
             <ResponseField name="voiceType" type="string" >
-                cloned: create the voice by recording online or upload audio files.
-                designed: create the voice by voice design
+                <div>cloned: create the voice by recording online or upload audio files.</div>
+                <div>designed: create the voice by voice design</div>
             </ResponseField>
             <ResponseField name="voiceFeature" type="string" >
             Text-to-Speech or AI Cover
@@ -47,7 +47,7 @@ Includes specific data.
 <RequestExample>
 
 ```bash Example Request
-curl --location 'https://api.mintlify.com/sound_clone/api/v1/voices/list' \
+curl --location 'https://api.mintlify.com/sound_clone/api/v1/voices' \
 --header 'Content-Type: application/json' \
 --header 'accessKey: xxxx'
 ```

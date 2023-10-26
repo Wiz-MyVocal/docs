@@ -1,7 +1,7 @@
 ---
-title: "Edit Voice for TTS"
+title: "Design Voice for TTS_Save"
 api: "POST https://www.myvocal.ai/sound_clone/api/v1/voices/generation/save"
-description: "Edit a custom voice created by you. You can upload more files to improve your voice."
+description: "Save the voice you design as voice_id you design"
 ---
 
 ### Header
@@ -11,15 +11,12 @@ description: "Edit a custom voice created by you. You can upload more files to i
 
 ### Body
 <ParamField body="name" type="string" required>
-  Your voiceId
+Please do not exceed 32 characters in length.
 </ParamField>
 <ParamField body="generatedVoiceId" type="string" required>
-xxxxx
+The generated_id included in the callback when you use Design Voice for TTS_Generate
 </ParamField>
 
-<ParamField body="labels" type="string" required>
-  Your voiceId
-</ParamField>
 
 
 
@@ -55,9 +52,8 @@ curl --location --request POST 'https://www.myvocal.ai/sound_clone/api/v1/voices
 --header 'Content-Type: multipart/form-data' \
 --header 'accessKey: apiKey' \
 --data '{
-    "generatedVoiceId":"SXlHS36r5MTu5BATz6nd",
-    "name":"徐融捏的声音",
-    "labels":"{\"gender\":\"female\",\"accent\":\"indian\",\"age\":\"old\"}"
+    "generatedVoiceId":"111",
+    "name":"voicename"
 }'
 ```
 </RequestExample>

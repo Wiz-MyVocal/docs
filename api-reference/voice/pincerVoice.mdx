@@ -1,7 +1,7 @@
 ---
-title: "Edit Voice for TTS"
+title: "Design Voice for TTS_Generate"
 api: "POST https://www.myvocal.ai/sound_clone/api/v1/voices/generation/generate"
-description: "Edit a custom voice created by you. You can upload more files to improve your voice."
+description: "Create a new voice without any audio files."
 ---
 
 ### Header
@@ -11,21 +11,29 @@ description: "Edit a custom voice created by you. You can upload more files to i
 
 ### Body
 <ParamField body="text" type="string" required>
-  Your voiceId
+  Please provide a piece of English content that is no less than 100 characters and no more than 500 characters for the purpose of generating a trial audio.
 </ParamField>
 <ParamField body="gender" type="string" required>
-xxxxx
+<div><b>male</b></div>
+<div><b>female</b></div>
 </ParamField>
 
 <ParamField body="accent" type="string" required>
-  Your voiceId
+<div><b>american</b></div>
+<div><b>british</b></div>
+<div><b>african</b></div>
+<div><b>australian</b></div>
+<div><b>indian</b></div>
 </ParamField>
 
 <ParamField body="age" type="string" required>
-  Your voiceId
+<div><b>middle_aged</b></div>
+<div><b>young</b></div>
+<div><b>old</b></div>
+
 </ParamField>
 <ParamField body="accentStrength" type="string" required>
-  Your voiceId
+  The parameter requirement is a decimal between 0 and 2, with increments of 0.1.
 </ParamField>
 
 

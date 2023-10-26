@@ -1,6 +1,6 @@
 ---
 title: "Add Voice for TTS"
-api: "POST https://api.mintlify.com/sound_clone/api/v1/voices"
+api: "POST https://api.mintlify.com/sound_clone/api/v1/tts/voices"
 description: "Create a new custom voice for Text-to-Speech function"
 ---
 
@@ -45,7 +45,7 @@ Includes specific data.
 <RequestExample>
 
 ```bash Example Request
-curl --location --request POST 'https://api.mintlify.com/sound_clone/api/v1/voices' \
+curl --location --request POST 'https://api.mintlify.com/sound_clone/api/v1/tts/voices' \
 --header 'Content-Type: multipart/form-data' \
 --header 'accessKey: apiKey' \
 --form 'voiceName="MyVocal"' \

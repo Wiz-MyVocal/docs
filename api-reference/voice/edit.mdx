@@ -1,6 +1,6 @@
 ---
 title: "Edit Voice for TTS"
-api: "PUT https://api.mintlify.com/sound_clone/api/v1/voices"
+api: "PUT https://api.mintlify.com/sound_clone/api/v1/tts/voices"
 description: "Edit a custom voice created by you. You can upload more files to improve your voice."
 ---
 
@@ -32,7 +32,7 @@ description: "Edit a custom voice created by you. You can upload more files to i
 <RequestExample>
 
 ```bash Example Request
-curl --location --request PUT 'https://api.mintlify.com/sound_clone/api/v1/voices' \
+curl --location --request PUT 'https://api.mintlify.com/sound_clone/api/v1/tts/voices' \
 --header 'Content-Type: multipart/form-data' \
 --header 'accessKey: apiKey' \
 --form 'voiceId="213"' \
