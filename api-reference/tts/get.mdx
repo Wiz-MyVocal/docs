@@ -31,7 +31,7 @@ description: "Generate a text-to-speech audio using a voice of your choice and r
 <ParamField body="voiceSettings" type="object">
 For some advanced settings, it is generally recommended to use the suggested parameters.
 <Expandable title="Toggle object">
-    <ParamField body="stability"  type="number" >
+    <ParamField body="stability"  type="number" default="0.7">
      <div><b>a decimal between 0 and 1, in increments of 0.1, with a recommended default value of 0.7.</b></div>
      <div>When your parameters are set lower, the emotional variation of the TTS audio will be more abundant. Even for the same text, the effects generated multiple times will be different. You can choose the most suitable one by generating the same text's TTS audio multiple times.</div>
      <div>When your parameters are set higher, the emotion of the TTS audio will tend to be consistent.</div>
