@@ -1,6 +1,6 @@
 ---
 title: "Design Voice for TTS_Save"
-api: "POST https://test.myvocal.ai/sound_clone/api/v1/voices/generation/save"
+api: "POST https://test.myvocal.ai/sound_clone/api/v1/tts/voices/generation/save"
 description: "Save the voice you design as voice_id you design"
 ---
 
@@ -48,7 +48,7 @@ Includes specific data.
 <RequestExample>
 
 ```bash Example Request
-curl --location --request POST 'https://test.myvocal.ai/sound_clone/api/v1/voices/generation/save' \
+curl --location --request POST 'https://test.myvocal.ai/sound_clone/api/v1/tts/voices/generation/save' \
 --header 'Content-Type: multipart/form-data' \
 --header 'accessKey: apiKey' \
 --data '{
