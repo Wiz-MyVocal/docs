@@ -1,7 +1,7 @@
 ---
 title: "Text-to-Speech"
 api: "POST https://test.myvocal.ai/sound_clone/sound_clone/api/v1/tts"
-description: "This endpoint gets or creates a new user."
+description: "Generate a text-to-speech audio using a voice of your choice and returns audio."
 ---
 ### Header
 <ParamField header="accessKey"   type="string" required>
@@ -31,7 +31,7 @@ description: "This endpoint gets or creates a new user."
 <ParamField body="voiceSettings" type="object">
 For some advanced settings, it is generally recommended to use the suggested parameters.
 <Expandable title="Toggle object">
-    <ParamField body="stability" type="number">
+    <ParamField body="stability"  type="number" >
      <div><b>a decimal between 0 and 1, in increments of 0.1, with a recommended default value of 0.7.</b></div>
      <div>When your parameters are set lower, the emotional variation of the TTS audio will be more abundant. Even for the same text, the effects generated multiple times will be different. You can choose the most suitable one by generating the same text's TTS audio multiple times.</div>
      <div>When your parameters are set higher, the emotion of the TTS audio will tend to be consistent.</div>
