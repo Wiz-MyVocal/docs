@@ -13,7 +13,7 @@ description: "Save the voice you design as voice_id "
 <ParamField body="name" type="string" required>
 Please do not exceed 32 characters in length.
 </ParamField>
-<ParamField body="generatedVoiceId" type="string" required>
+<ParamField body="generatedId" type="string" required>
 The generated_id included in the callback when you use Design Voice for TTS_Generate
 </ParamField>
 
@@ -49,10 +49,10 @@ Includes specific data.
 
 ```bash Example Request
 curl --location --request POST 'https://test.myvocal.ai/sound_clone/api/v1/tts/voices/generation/save' \
---header 'Content-Type: multipart/form-data' \
+--header 'Content-Type: application/json' \
 --header 'accessKey: apiKey' \
 --data '{
-    "generatedVoiceId":"111",
+    "generatedId":"111",
     "name":"voicename"
 }'
 ```
