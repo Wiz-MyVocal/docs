@@ -1,11 +1,11 @@
 ---
 title: "Text-to-Speech"
-api: "POST https://api.mintlify.com/sound_clone/sound_clone/api/v1/tts/create"
+api: "POST https://test.myvocal.ai/sound_clone/sound_clone/api/v1/tts/create"
 description: "This endpoint gets or creates a new user."
 ---
 ### Header
 <ParamField header="accessKey"   type="string" required>
- You can copy your api-key on https://www.myvocal.ai/profile after you have subscribed to Pro or Business Plan.
+ You can copy your api-key on https://test.myvocal.ai/profile after you have subscribed to Pro or Business Plan.
 </ParamField>
 
 ### Body
@@ -49,7 +49,7 @@ responType outPutStream
 
 ```bash Example Request
 curl -X 'POST' \
-'https://api.mintlify.com/sound_clone/sound_clone/api/v1/tts/create' \
+'https://test.myvocal.ai/sound_clone/sound_clone/api/v1/tts/create' \
 --header 'accept: audio/mpeg' \
 --header 'accessKey: xxxx'
 --header 'Content-Type: application/json' \

@@ -1,11 +1,11 @@
 ---
 title: "Delete Voice"
-api: "DELETE https://api.mintlify.com/sound_clone/api/v1/voices/{voiceId}"
+api: "DELETE https://test.myvocal.ai/sound_clone/api/v1/voices/{voiceId}"
 description: "Delete a custom voice by voiceId."
 ---
 ### Header
 <ParamField header="accessKey"   type="string" required>
-  You can copy your api-key on https://www.myvocal.ai/profile after you have subscribed to Pro or Business Plan.
+  You can copy your api-key on https://test.myvocal.ai/profile after you have subscribed to Pro or Business Plan.
 </ParamField>
 ### Path
 <ParamField path="voiceId"   type="string" required>
@@ -25,7 +25,7 @@ description: "Delete a custom voice by voiceId."
 <RequestExample>
 
 ```bash Example Request
-curl --location --globoff --request DELETE 'https://api.mintlify.com/sound_clone/api/v1/voices/{voiceId}' \
+curl --location --globoff --request DELETE 'https://test.myvocal.ai/sound_clone/api/v1/voices/{voiceId}' \
 --header 'Content-Type: application/json' \
 --header 'accessKey: xxxx'
 ```

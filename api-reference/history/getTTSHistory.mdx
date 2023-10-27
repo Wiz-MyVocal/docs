@@ -1,11 +1,11 @@
 ---
 title: "Get TTS History Item"
-api: "POST https://www.myvocal.ai/sound_clone/api/v1/tts/list"
+api: "POST https://test.myvocal.ai/sound_clone/api/v1/tts/list"
 description: "Return metadata about all your generated tts audio."
 ---
 ### Header
 <ParamField header="accessKey"   type="string" required>
-  You can copy your api-key on https://www.myvocal.ai/profile after you have subscribed to Pro or Business Plan.
+  You can copy your api-key on https://test.myvocal.ai/profile after you have subscribed to Pro or Business Plan.
 </ParamField>
 
 ### Body
@@ -73,7 +73,7 @@ Includes specific data.
 
 ```bash Example Request
 ```bash Example Request
-curl --location --request GET 'https://api.mintlify.com/sound_clone/api/v1/tts/list' \
+curl --location --request GET 'https://test.myvocal.ai/sound_clone/api/v1/tts/list' \
 --header 'Content-Type: application/json' \
 --header 'accessKey: xxxx'
 ```

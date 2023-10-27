@@ -1,12 +1,12 @@
 ---
 title: "Edit Voice for TTS"
-api: "PUT https://api.mintlify.com/sound_clone/api/v1/tts/voices"
+api: "PUT https://test.myvocal.ai/sound_clone/api/v1/tts/voices"
 description: "Edit a custom voice created by you. You can upload more files to improve your voice."
 ---
 
 ### Header
 <ParamField header="accessKey"   type="string" required>
-  You can copy your api-key on https://www.myvocal.ai/profile after you have subscribed to Pro or Business Plan.
+  You can copy your api-key on https://test.myvocal.ai/profile after you have subscribed to Pro or Business Plan.
 </ParamField>
 
 ### Body
@@ -32,7 +32,7 @@ description: "Edit a custom voice created by you. You can upload more files to i
 <RequestExample>
 
 ```bash Example Request
-curl --location --request PUT 'https://api.mintlify.com/sound_clone/api/v1/tts/voices' \
+curl --location --request PUT 'https://test.myvocal.ai/sound_clone/api/v1/tts/voices' \
 --header 'Content-Type: multipart/form-data' \
 --header 'accessKey: apiKey' \
 --form 'voiceId="213"' \
