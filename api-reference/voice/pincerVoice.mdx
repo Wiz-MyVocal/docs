@@ -1,6 +1,6 @@
 ---
 title: "Design Voice for TTS_Generate"
-api: "POST https://test.myvocal.ai/sound_clone/api/v1/tts/voices/generation/generate"
+api: "POST https://test.myvocal.ai/sound_clone/api/v1/voices-tts/generate"
 description: "Create a new voice without any audio files."
 ---
 
@@ -48,7 +48,7 @@ description: "Create a new voice without any audio files."
 <RequestExample>
 
 ```bash Example Request
-curl --location --request PUT 'https://test.myvocal.ai/sound_clone/api/v1/tts/voices' \
+curl --location --request PUT 'https://test.myvocal.ai/sound_clone/api/v1/voices-tts/generate' \
 --header 'accessKey: xxxx' \
 --header 'Content-Type: application/json' \
 --data '{

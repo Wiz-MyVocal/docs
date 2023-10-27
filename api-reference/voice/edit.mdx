@@ -1,6 +1,6 @@
 ---
 title: "Edit Voice for TTS"
-api: "PUT https://test.myvocal.ai/sound_clone/api/v1/tts/voices"
+api: "PUT https://test.myvocal.ai/sound_clone/api/v1/voices-tts/{voiceId}"
 description: "Edit a custom voice created by you. You can upload more files to improve your voice."
 ---
 
@@ -11,7 +11,7 @@ description: "Edit a custom voice created by you. You can upload more files to i
 
 ### Body
 
-<ParamField body="voiceId" type="string" required>
+<ParamField heander="voiceId" type="string" required>
   Your voiceId
 </ParamField>
 <ParamField body="files" type="files" required>
@@ -32,7 +32,7 @@ description: "Edit a custom voice created by you. You can upload more files to i
 <RequestExample>
 
 ```bash Example Request
-curl --location --request PUT 'https://test.myvocal.ai/sound_clone/api/v1/tts/voices' \
+curl --location --request PUT 'https://test.myvocal.ai/sound_clone/api/v1/voices-tts/{voiceId}' \
 --header 'Content-Type: multipart/form-data' \
 --header 'accessKey: apiKey' \
 --form 'voiceId="213"' \
