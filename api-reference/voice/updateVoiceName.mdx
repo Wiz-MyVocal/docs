@@ -34,7 +34,7 @@ description: "Create a new custom voice for Text-to-Speech function"
 <RequestExample>
 
 ```bash Example Request
-curl --location --request POST 'https://test.myvocal.ai/sound_clone/api/v1/voices/rename/{voiceId}' \
+curl --location --request PUT 'https://api.mintlify.com/sound_clone/api/v1/voices/rename/{voiceId}' \
 --header 'Content-Type: multipart/form-data' \
 --header 'accessKey: apiKey' \
 --form 'voiceId="121"' \
@@ -48,9 +48,6 @@ curl --location --request POST 'https://test.myvocal.ai/sound_clone/api/v1/voice
 {
   "code": 1,
   "message": "Success",
-  "data": {
-    "voiceId": 3
-  }
 }
 ```
 
