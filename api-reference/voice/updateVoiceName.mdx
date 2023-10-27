@@ -1,6 +1,6 @@
 
 title: "Update Voice Name"
-api: "POST https://api.mintlify.com/sound_clone/api/v1/tts/voices"
+api: "PUT https://api.mintlify.com/sound_clone/api/v1/tts/voices"
 description: "Create a new custom voice for Text-to-Speech function"
 ---
 
@@ -48,9 +48,6 @@ curl --location --request POST 'https://api.mintlify.com/sound_clone/api/v1/voic
 {
   "code": 1,
   "message": "Success",
-  "data": {
-    "voiceId": 3
-  }
 }
 ```
 
