@@ -9,7 +9,7 @@ description: "Create a new custom voice for Text-to-Speech function"
 <ParamField header="accessKey"   type="string" required>
   You can copy your api-key on https://test.myvocal.ai/profile after you have subscribed to Pro or Business Plan.
 </ParamField>
-<ParamField header="content-type"  type="string" default = "multipart/form-data" initialValue = "multipart/form-data">
+<ParamField header="content-type"  type="string" >
   You can copy your api-key on https://test.myvocal.ai/profile after you have subscribed to Pro or Business Plan.
 </ParamField>
 
@@ -21,19 +21,7 @@ description: "Create a new custom voice for Text-to-Speech function"
 <ParamField body="files" type="Files" required>
   Please provide mp3/wav/m4a files. A single file cannot exceed 10MB, and up to 24 files can be uploaded.
 </ParamField>
-<ParamField path="files" type="Files" required>
-  Please provide mp3/wav/m4a files. A single file cannot exceed 10MB, and up to 24 files can be uploaded.
-</ParamField>
-<FormData path="name" type="string" required>
-  Please do not exceed 32 characters in length.
-</FormData>
 
-
-### Body
-
-<ParamField body="files" type="Files" required>
-  Please provide mp3/wav/m4a files. A single file cannot exceed 10MB, and up to 24 files can be uploaded.
-</ParamField>
 
 ### Response
 
