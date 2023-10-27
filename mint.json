@@ -36,7 +36,7 @@
       ]
     },
     {
-      "group": "Text to Speech",
+      "group": "Text-to-Speech",
       "pages": ["api-reference/tts/get", "api-reference/tts/getStream"]
     },
     {
