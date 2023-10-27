@@ -37,7 +37,10 @@
     },
     {
       "group": "Text-to-Speech",
-      "pages": ["api-reference/tts/get", "api-reference/tts/getStream"]
+      "pages": [
+        "api-reference/tts/get",
+        "api-reference/tts/getStream"
+      ]
     },
     {
       "group": "History",
@@ -49,7 +52,9 @@
     },
     {
       "group": "User",
-      "pages": ["api-reference/user/getInfo","api-reference/user/getTTS"]
+      "pages": [
+        "api-reference/user/getInfo"
+      ]
     }
   ],
   "footerSocials": {

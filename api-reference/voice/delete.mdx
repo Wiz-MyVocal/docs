@@ -33,10 +33,16 @@ curl --location --globoff --request DELETE 'https://test.myvocal.ai/sound_clone/
 
 <ResponseExample>
 
-```json Response
+```json  200（success）
 {
   "code": 1,
   "message": "Success",
+}
+```
+```json  200（fail）
+{
+  "code": -1,
+  "message": "error msg",
 }
 ```
 

@@ -63,13 +63,13 @@ curl --location --request PUT 'https://test.myvocal.ai/sound_clone/api/v1/tts/vo
 
 <ResponseExample>
 
-```json success
-This response does not have an example.
+```json  200（success）
+This response is stream.
 ```
-```json error 
+```json  200（fail）
 {
-  	"code": -1,
-	"message": "error msg",
+  "code": -1,
+  "message": "error msg",
 }
 ```
 

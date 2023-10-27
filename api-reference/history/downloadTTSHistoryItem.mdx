@@ -54,7 +54,7 @@ curl --location --request POST 'https://test.myvocal.ai/sound_clone/api/v1/tts/u
 
 <ResponseExample>
 
-```json Response
+```json  200（success）
 {
   "code": 1,
   "message": "Success",
@@ -68,6 +68,12 @@ curl --location --request POST 'https://test.myvocal.ai/sound_clone/api/v1/tts/u
       "ttsUrl": "https://dev.download.myvocal.ai/api/tts/135105/420a5fd174264fc49783e2ab920f08ae/139317/eeb20430df2949f6abfbb2d3d350085e.mp3"
     }
   ]
+}
+```
+```json  200（fail）
+{
+  "code": -1,
+  "message": "error msg",
 }
 ```
 

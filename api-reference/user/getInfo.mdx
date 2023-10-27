@@ -74,7 +74,7 @@ curl --location --request GET 'https://test.myvocal.ai/sound_clone/api/v1/user/b
 
 <ResponseExample>
 
-```json Response
+```json  200（success）
 {
 	"code": 1,
 	"message": "Success",
@@ -91,6 +91,12 @@ curl --location --request GET 'https://test.myvocal.ai/sound_clone/api/v1/user/b
             "additionalTtsCharacters":1000
         }
     }
+}
+```
+```json  200（fail）
+{
+  "code": -1,
+  "message": "error msg",
 }
 ```
 

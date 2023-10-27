@@ -43,10 +43,16 @@ curl --location --request PUT 'https://test.myvocal.ai/sound_clone/api/v1/tts/vo
 
 <ResponseExample>
 
-```json Response
+```json  200（success）
 {
   "code": 1,
-  "message": "Success"
+  "message": "Success",
+}
+```
+```json  200（fail）
+{
+  "code": -1,
+  "message": "error msg",
 }
 ```
 

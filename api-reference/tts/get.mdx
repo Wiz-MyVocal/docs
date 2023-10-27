@@ -42,7 +42,7 @@ For some advanced settings, it is generally recommended to use the suggested par
 </ParamField>
 
 ### Response
-responType outPutStream
+This response is stream.
 
 
 <RequestExample>
@@ -67,10 +67,10 @@ curl -X 'POST' \
 
 <ResponseExample>
 
-```json success
-This response does not have an example.
+```json  200（success）
+This response is stream.
 ```
-```json error 
+```json  500（fail）
 {
   	"code": -1,
 	"message": "error msg",
