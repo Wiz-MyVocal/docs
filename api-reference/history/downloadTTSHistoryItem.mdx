@@ -1,6 +1,6 @@
 ---
 title: "Get TTS History Url"
-api: "GET https://test.myvocal.ai/sound_clone/api/v1/tts/list"
+api: "POST https://test.myvocal.ai/sound_clone/api/v1/tts/url"
 description: "Get tts history items' audio url ."
 ---
 ### Header
@@ -39,7 +39,7 @@ description: "Get tts history items' audio url ."
 
 ```bash Example Request
 ```bash Example Request
-curl --location --request GET 'https://test.myvocal.ai/sound_clone/api/v1/tts/list' \
+curl --location --request POST 'https://test.myvocal.ai/sound_clone/api/v1/tts/url' \
 --header 'Content-Type: application/json' \
 --header 'accessKey: xxxx' \
 --data '{

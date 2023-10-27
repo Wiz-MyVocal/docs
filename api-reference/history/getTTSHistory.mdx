@@ -1,6 +1,6 @@
 ---
 title: "Get TTS History Item"
-api: "POST https://test.myvocal.ai/sound_clone/api/v1/tts/list"
+api: "GET https://test.myvocal.ai/sound_clone/api/v1/tts/history"
 description: "Return metadata about all your generated tts audio."
 ---
 ### Header
@@ -73,7 +73,7 @@ Includes specific data.
 
 ```bash Example Request
 ```bash Example Request
-curl --location --request GET 'https://test.myvocal.ai/sound_clone/api/v1/tts/list' \
+curl --location --request GET 'https://test.myvocal.ai/sound_clone/api/v1/tts/history' \
 --header 'Content-Type: application/json' \
 --header 'accessKey: xxxx'
 ```
