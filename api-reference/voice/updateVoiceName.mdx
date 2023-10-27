@@ -1,6 +1,6 @@
 ---
 title: "Update Voice Name"
-api: "POST https://test.myvocal.ai/sound_clone/api/v1/tts/voices"
+api: "POST https://test.myvocal.ai/sound_clone/api/v1/tts/voices/rename/{voiceId}"
 description: "Update Voice Name"
 ---
 
@@ -10,13 +10,11 @@ description: "Update Voice Name"
   You can copy your api-key on https://test.myvocal.ai/profile after you have subscribed to Pro or Business Plan.
 </ParamField>
 
-### Body
-
-### Body
-
-<ParamField body="voiceId" type="string" required>
+### Path
+<ParamField path="voiceId" type="Long" required>
   Your voiceId
 </ParamField>
+### Body
 <ParamField body="name" type="string" required>
   Your new voice name
 </ParamField>

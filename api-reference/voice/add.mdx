@@ -1,6 +1,6 @@
 ---
 title: "Add Voice for TTS"
-api: "POST https://test.myvocal.ai/sound_clone/api/v1/tts/voices"
+api: "POST https://test.myvocal.ai/sound_clone/api/v1/tts/voices content-type:multipart/form-data"
 description: "Create a new custom voice for Text-to-Speech function"
 ---
 
@@ -14,7 +14,7 @@ description: "Create a new custom voice for Text-to-Speech function"
 <ParamField body="voiceName" type="string" required>
   Please do not exceed 32 characters in length.
 </ParamField>
-<ParamField body="files" type="files" required>
+<ParamField body="files" type="File" required>
   Please provide mp3/wav/m4a files. A single file cannot exceed 10MB, and up to 24 files can be uploaded.
 </ParamField>
 
