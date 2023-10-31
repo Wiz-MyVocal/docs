@@ -69,9 +69,11 @@ curl -X 'POST' \
 <ResponseExample>
 
 ```json  200（success）
+header 'success: true'
 This response is stream.
 ```
-```json  500（fail）
+```json  200（fail）
+header 'success: false'
 {
   	"code": -1,
 	"message": "error msg",
