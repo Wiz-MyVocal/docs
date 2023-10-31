@@ -64,9 +64,11 @@ curl --location --request PUT 'https://api.myvocal.ai/sound_clone/api/v1/voices-
 <ResponseExample>
 
 ```json  200（success）
+header 'success: true'
 This response is stream.
 ```
 ```json  200（fail）
+header 'success: false'
 {
   "code": -1,
   "message": "error msg",
