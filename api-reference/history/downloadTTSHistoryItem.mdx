@@ -1,11 +1,11 @@
 ---
 title: "Get TTS History Url"
-api: "POST https://test.myvocal.ai/sound_clone/api/v1/tts/url"
+api: "POST https://api.myvocal.ai/sound_clone/api/v1/tts/url"
 description: "Get tts history items' audio url ."
 ---
 ### Header
 <ParamField header="accessKey"   type="string" required>
-  You can copy your api-key on https://test.myvocal.ai/profile after you have subscribed to Pro or Business Plan.
+  You can copy your api-key on https://api.myvocal.ai/profile after you have subscribed to Pro or Business Plan.
 </ParamField>
 
 ### Body
@@ -39,7 +39,7 @@ description: "Get tts history items' audio url ."
 
 ```bash Example Request
 ```bash Example Request
-curl --location --request POST 'https://test.myvocal.ai/sound_clone/api/v1/tts/url' \
+curl --location --request POST 'https://api.myvocal.ai/sound_clone/api/v1/tts/url' \
 --header 'Content-Type: application/json' \
 --header 'accessKey: xxxx' \
 --data '{

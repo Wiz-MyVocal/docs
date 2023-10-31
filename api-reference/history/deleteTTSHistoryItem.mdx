@@ -1,11 +1,11 @@
 ---
 title: "Delete TTS"
-api: "DELETE https://test.myvocal.ai/sound_clone/api/v1/tts/history"
+api: "DELETE https://api.myvocal.ai/sound_clone/api/v1/tts/history"
 description: "Delete up to 500 tts history items once by tts_id."
 ---
 ### Header
 <ParamField header="accessKey"   type="string" required>
-  You can copy your api-key on https://test.myvocal.ai/profile after you have subscribed to Pro or Business Plan.
+  You can copy your api-key on https://api.myvocal.ai/profile after you have subscribed to Pro or Business Plan.
 </ParamField>
 ### Body
 <ParamField body="ttsIds" type="array" required>
@@ -26,7 +26,7 @@ description: "Delete up to 500 tts history items once by tts_id."
 <RequestExample>
 
 ```bash Example Request
-curl --location --globoff --request DELETE 'https://test.myvocal.ai/sound_clone/api/v1/tts/history' \
+curl --location --globoff --request DELETE 'https://api.myvocal.ai/sound_clone/api/v1/tts/history' \
 --header 'Content-Type: application/json' \
 --header 'accessKey: xxxx'
 --data '{

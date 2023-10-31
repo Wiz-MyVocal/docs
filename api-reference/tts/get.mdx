@@ -1,11 +1,11 @@
 ---
 title: "Text-to-Speech"
-api: "POST https://test.myvocal.ai/sound_clone/api/v1/tts"
+api: "POST https://docs.myvocal.ai/sound_clone/api/v1/tts"
 description: "Generate a text-to-speech audio using a voice of your choice and returns audio."
 ---
 ### Header
 <ParamField header="accessKey"   type="string" required>
- You can copy your api-key on https://test.myvocal.ai/profile after you have subscribed to Pro or Business Plan.
+ You can copy your api-key on https://api.myvocal.ai/profile after you have subscribed to Pro or Business Plan.
 </ParamField>
 
 ### Body
@@ -49,7 +49,7 @@ This response is stream.
 
 ```bash Example Request
 curl -X 'POST' \
-'https://test.myvocal.ai/sound_clone/sound_clone/api/v1/tts/create' \
+'https://api.myvocal.ai/sound_clone/sound_clone/api/v1/tts/create' \
 --header 'accept: audio/mpeg' \
 --header 'accessKey: xxxx'
 --header 'Content-Type: application/json' \

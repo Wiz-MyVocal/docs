@@ -20,7 +20,7 @@
   },
   "topbarCtaButton": {
     "name": "Home Page",
-    "url": "https://test.myvocal.ai"
+    "url": "https://api.myvocal.ai"
   },
   "navigation": [
     {
