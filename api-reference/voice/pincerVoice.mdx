@@ -39,6 +39,10 @@ description: "Create a new voice without any audio files.(❗❗❗File-related 
 
 ### Response
 ### Header
+<ResponseField name="success"   type="string" >
+    If the request is successful, this value in the callback is <b>true</b>.
+</ResponseField>
+This response is stream.
 <ResponseField name="generatedId"   type="string" >
     The generated_id included in the callback when you use Design Voice for TTS_Generate
 </ResponseField>
