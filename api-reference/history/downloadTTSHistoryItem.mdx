@@ -49,7 +49,21 @@ curl --location --request POST 'https://api.myvocal.ai/sound_clone/api/v1/tts/ur
 }'
 ```
 
+```bash Example Request
+curl --location --request POST 'https://api.myvocal.ai/sound_clone/api/v1/tts/url' \
+--header 'Content-Type: application/json' \
+--header 'accessKey: xxxx' \
+--data '{
+    "ttsIds":[
+        "0",
+        "1"
+    ]
+}'
+```
+
 </RequestExample>
+
+
 
 <ResponseExample>
 
