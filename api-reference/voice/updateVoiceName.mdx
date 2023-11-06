@@ -1,6 +1,6 @@
 ---
 title: "Update Voice Name"
-api: "PUT https://api.myvocal.ai/sound_clone/api/v1/voices-tts/rename/{voiceId}"
+api: "PUT https://api.myvocal.ai/sound_clone/api/v1/voices/rename/{id}"
 description: "Update Voice Name"
 ---
 
@@ -11,7 +11,7 @@ description: "Update Voice Name"
 </ParamField>
 
 ### Path
-<ParamField path="voiceId" type="Long" required>
+<ParamField path="id" type="Long" required>
   Your voiceId
 </ParamField>
 ### Body
@@ -33,11 +33,12 @@ description: "Update Voice Name"
 <RequestExample>
 
 ```bash Example Request
-curl --location --request PUT 'https://api.mintlify.com/sound_clone/api/v1/voices-tts/rename/{voiceId}' \
---header 'Content-Type: multipart/form-data' \
---header 'accessKey: apiKey' \
---form 'voiceId="121"' \
---form 'name="newName"' 
+curl --location --request PUT 'https://api.myvocal.ai/sound_clone/api/v1/voices/rename/7812' \
+--header 'accessKey: xxx' \
+--header 'Content-Type: application/json' \
+--data '{
+	"name": "rename"
+}'
 ```
 </RequestExample>
 
