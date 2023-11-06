@@ -49,10 +49,10 @@ Includes specific data.
 
 ```bash Example Request
 curl --location 'https://api.myvocal.ai/sound_clone/api/v1/voices/design/save' \
---header 'accessKey: xxx' \
+--header 'accessKey: xxxx' \
 --header 'Content-Type: application/json' \
 --data '{
-	"designId": "xxx",
+	"designId": "cbadQRR3tRp9QmikK8jv",
 	"name": "test"
 }'
 ```
@@ -62,11 +62,11 @@ curl --location 'https://api.myvocal.ai/sound_clone/api/v1/voices/design/save' \
 
 ```json  200（success）
 {
-  "code": 1,
-  "message": "Success",
-  "data": {
-    "voiceId": 3
-  }
+    "code": 1,
+    "message": "Success",
+    "data": {
+        "id": "7814"
+    }
 }
 ```
 ```json  200（fail）
