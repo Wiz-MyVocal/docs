@@ -1,7 +1,7 @@
 ---
-title: "Get TTS History Url"
-api: "POST https://api.myvocal.ai/sound_clone/api/v1/tts/url"
-description: "Get tts history items' audio url ."
+title: "Get TTS URL"
+api: "POST https://api.myvocal.ai/sound_clone/api/v1/tts/query"
+description: "Get tts history audio url ."
 ---
 ### Header
 <ParamField header="accessKey"   type="string" required>
@@ -9,7 +9,7 @@ description: "Get tts history items' audio url ."
 </ParamField>
 
 ### Body
-<ParamField body="ttsIds" type="array" required>
+<ParamField body="ids" type="array" required>
  You can provide up to 1,000 Ids at a time.
 </ParamField>
 
@@ -26,10 +26,10 @@ description: "Get tts history items' audio url ."
 <ResponseField name="data" type="array">
   <Expandable title="Toggle object">
    
-  <ResponseField name="ttsId" type="string">
+  <ResponseField name="id" type="string">
       Your tts id.
   </ResponseField>
-   <ResponseField name="ttsUrl" type="string">
+   <ResponseField name="url" type="string">
      The audio file url corresponding to ttsId.
   </ResponseField>
   </Expandable>
@@ -38,26 +38,11 @@ description: "Get tts history items' audio url ."
 <RequestExample>
 
 ```bash Example Request
-curl --location --request POST 'https://api.myvocal.ai/sound_clone/api/v1/tts/url' \
+curl --location 'https://api.myvocal.ai/sound_clone/api/v1/tts/query' \
+--header 'accessKey: xxx' \
 --header 'Content-Type: application/json' \
---header 'accessKey: xxxx' \
 --data '{
-    "ttsIds":[
-        "0",
-        "1"
-    ]
-}'
-```
-
-```bash Example Request
-curl --location --request POST 'https://api.myvocal.ai/sound_clone/api/v1/tts/url' \
---header 'Content-Type: application/json' \
---header 'accessKey: xxxx' \
---data '{
-    "ttsIds":[
-        "0",
-        "1"
-    ]
+	"ids":["22","13"] 
 }'
 ```
 
@@ -69,18 +54,18 @@ curl --location --request POST 'https://api.myvocal.ai/sound_clone/api/v1/tts/ur
 
 ```json  200（success）
 {
-  "code": 1,
-  "message": "Success",
-  "data": [
-    {
-      "ttsId": "100819",
-      "ttsUrl": "https://dev.download.myvocal.ai/api/tts/135105/420a5fd174264fc49783e2ab920f08ae/139317/4a3215fcaa9d494c8c19f52d250c5190.mp3"
-    },
-    {
-      "ttsId": "100830",
-      "ttsUrl": "https://dev.download.myvocal.ai/api/tts/135105/420a5fd174264fc49783e2ab920f08ae/139317/eeb20430df2949f6abfbb2d3d350085e.mp3"
-    }
-  ]
+    "code": 1,
+    "message": "Success",
+    "data": [
+        {
+            "id": "2195",
+            "url": "xxxx"
+        },
+        {
+            "id": "2196",
+            "url": "xxxx"
+        }
+    ]
 }
 ```
 ```json  200（fail）

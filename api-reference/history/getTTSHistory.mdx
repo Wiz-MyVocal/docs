@@ -1,6 +1,6 @@
 ---
-title: "Get TTS History Item"
-api: "GET https://api.myvocal.ai/sound_clone/api/v1/tts/history"
+title: "Get TTS LIST"
+api: "GET https://api.myvocal.ai/sound_clone/api/v1/tts/list"
 description: "Return metadata about all your generated tts audio."
 ---
 ### Header
@@ -37,25 +37,25 @@ Includes specific data.
       <ResponseField name="earliestHistoryItemId" type="String" >
                 The earliest ttsid in this callback.
         </ResponseField>
-        <ResponseField name="history" type="list">
+        <ResponseField name="list" type="list">
                 The specific info of TTS history queried this time.
             <Expandable title="Toggle object">
-            <ResponseField name="ttsId" type="string" >
+            <ResponseField name="id" type="string" >
                 tts id
             </ResponseField>
-            <ResponseField name="ttsTitle" type="string" >
+            <ResponseField name="title" type="string" >
                 tts title
             </ResponseField>
-            <ResponseField name="ttsText" type="string" >
+            <ResponseField name="text" type="string" >
             tts content
             </ResponseField>
-            <ResponseField name="characterCount" type="number" >
+            <ResponseField name="useChars" type="number" >
             character count of this TTS item.
             </ResponseField>
             <ResponseField name="language" type="string" >
             chosen language
             </ResponseField>
-            <ResponseField name="itemGeneratedType" type="string" >
+            <ResponseField name="channel" type="string" >
             web or api
             </ResponseField>
             <ResponseField name="voiceId" type="string" >
@@ -72,9 +72,8 @@ Includes specific data.
 <RequestExample>
 
 ```bash Example Request
-curl --location --request GET 'https://api.myvocal.ai/sound_clone/api/v1/tts/history' \
---header 'Content-Type: application/json' \
---header 'accessKey: xxxx'
+curl --location 'https://api.myvocal.ai/sound_clone/api/v1/tts/list' \
+--header 'accessKey: xxx'
 ```
 
 </RequestExample>
@@ -83,21 +82,31 @@ curl --location --request GET 'https://api.myvocal.ai/sound_clone/api/v1/tts/his
 
 ```json  200（success）
 {
-  	"code": 1,
-	"message": "Success",
-    "data":{
-        "hasMore":false,
-        "earliestHistoryItemId":"0",
-        "history":[
+    "code": 1,
+    "message": "Success",
+    "data": {
+        "hasMore": true,
+        "earliestHistoryItemId": "2186",
+        "list": [
             {
-                "voiceId":"20",
-                "voiceName":"test",
-                "ttsId":"0",
-                "ttsTitle":"",
-                "ttsText":"",
-                "characterCount":"0",
-                "language":"",
-                "itemGeneratedType":""
+                "voiceId": "7813",
+                "voiceName": "test",
+                "id": "2197",
+                "title": "female",
+                "text": "Generate a text-to-speech audio using a voice of your choice and returns audio stream.",
+                "useChars": 86,
+                "language": "original_english",
+                "channel": "api"
+            },
+            {
+                "voiceId": "7789",
+                "voiceName": "FirstClonedVoice",
+                "id": "2194",
+                "title": "female",
+                "text": "Generate a text-to-speech audio using a voice of your choice and returns audio stream.",
+                "useChars": 86,
+                "language": "original_english",
+                "channel": "api"
             }
         ]
     }
