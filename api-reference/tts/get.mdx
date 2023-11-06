@@ -12,10 +12,10 @@ description: "Generate a text-to-speech audio using a voice of your choice and r
 <ParamField body="voiceId" type="string">
   Your voiceId
 </ParamField>
-<ParamField body="ttsTitle" type="string">
+<ParamField body="title" type="string">
   Please do not exceed 32 characters in length. If this parameter is null, it will all default to "Untitled_TTS" 
 </ParamField>
-<ParamField body="ttsText" type="string">
+<ParamField body="text" type="string">
   The maximum number of characters you can input at once depends on the benefits of your subscription plan.
 </ParamField>
 <ParamField body="language" type="string">
@@ -44,8 +44,8 @@ For some advanced settings, it is generally recommended to use the suggested par
 ### Response
 
 ### Header
-<ParamField header="success"   type="string" >
-    If the request is successful, this value in the callback is <b>true</b>.
+<ParamField header="Content-Type"   type="string" >
+    If the request is successful, this value in the callback is <b>audio/mpeg</b>.
 </ParamField>
 This response is stream.
 
@@ -53,17 +53,15 @@ This response is stream.
 <RequestExample>
 
 ```bash Example Request
-curl -X 'POST' \
-'https://api.myvocal.ai/sound_clone/api/v1/tts' \
---header 'accept: audio/mpeg' \
---header 'accessKey: xxxx' \
+curl --location 'https://api.myvocal.ai/sound_clone/api/v1/tts' \
+--header 'accessKey: xxx' \
 --header 'Content-Type: application/json' \
 --data '{
-    "voiceId":"221",
-    "ttsTitle":"222",
-    "ttsText":"hello word",
-    "language":"us_english",
-    "voiceSettings":{
+	"voiceId": "7813",
+	"title": "female",
+	"text": "Generate a text-to-speech audio using a voice of your choice and returns audio stream.",
+	"language": "original_english",
+	"voiceSettings":{
         "stability":0.7
     }
 }'
@@ -73,11 +71,9 @@ curl -X 'POST' \
 <ResponseExample>
 
 ```json  200（success）
-header 'success: true'
 This response is stream.
 ```
 ```json  200（fail）
-header 'success: false'
 {
   	"code": -1,
 	"message": "error msg",
