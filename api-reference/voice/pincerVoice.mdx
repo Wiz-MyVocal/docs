@@ -1,6 +1,6 @@
 ---
 title: "Design Voice for TTS_Generate"
-api: "POST https://docs.myvocal.ai/sound_clone/api/v1/voices-tts/generate"
+api: "POST https://docs.myvocal.ai/sound_clone/api/v1/voices/design"
 description: "Create a new voice without any audio files.(❗❗❗File-related interfaces are not supported, please use interface tools for requests.)"
 ---
 
@@ -39,12 +39,12 @@ description: "Create a new voice without any audio files.(❗❗❗File-related 
 
 ### Response
 ### Header
-<ResponseField name="success"   type="string" >
-    If the request is successful, this value in the callback is <b>true</b>.
+<ResponseField name="Content-Type"  type="string" >
+    If the request is successful, this value in the callback is <b>audio/mpeg</b>.
 </ResponseField>
 This response is stream.
-<ResponseField name="voiceId"   type="string" >
-    The generated_id included in the callback when you use Design Voice for TTS_Generate
+<ResponseField name="designId"   type="string" >
+    The designId included in the callback when you use Design Voice for TTS_Generate
 </ResponseField>
 ### Body
 
@@ -52,8 +52,8 @@ This response is stream.
 <RequestExample>
 
 ```bash Example Request
-curl --location --request POST 'https://api.myvocal.ai/sound_clone/api/v1/voices-tts/generate' \
---header 'accessKey: xxxx' \
+curl --location 'https://uat.myvocal.ai/sound_clone/api/v1/voices/design' \
+--header 'accessKey: xxx' \
 --header 'Content-Type: application/json' \
 --data '{
 	"text": "The client interacts with users through mobile devices, while the server is responsible for data  in",
@@ -68,11 +68,9 @@ curl --location --request POST 'https://api.myvocal.ai/sound_clone/api/v1/voices
 <ResponseExample>
 
 ```json  200（success）
-header 'success: true'
 This response is stream.
 ```
 ```json  200（fail）
-header 'success: false'
 {
   "code": -1,
   "message": "error msg",
