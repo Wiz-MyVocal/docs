@@ -1,6 +1,6 @@
 ---
 title: "Get User Info"
-api: "GET https://api.myvocal.ai/sound_clone/api/v1/user/benefit"
+api: "GET https://api.myvocal.ai/sound_clone/api/v1/user/info"
 description: "This endpoint gets or creates a new user."
 ---
 ### Header
@@ -35,20 +35,20 @@ Includes specific data.
         </ResponseField>
         <ResponseField name="benefit" type="object">
         <Expandable title="Toggle object">
-        <ResponseField name="leftVoices" type="number">
-            The number of custom voices you left through the website or API.
+        <ResponseField name="usedVoices" type="number">
+            The number of custom voices you created through the website or API.
         </ResponseField>
         <ResponseField name="totalVoices" type="number">
             The maximum number of custom voices you can create with your subscription plan.
         </ResponseField>
-        <ResponseField name="leftMonthlyChars" type="number">
-            The number of TTS characters you left  within your subscription plan.
+        <ResponseField name="usedMonthlyChars" type="number">
+            The number of TTS characters you have used  within your subscription plan.
         </ResponseField>
         <ResponseField name="totalMonthlyChars" type="number">
             The maximum number of TTS characters within your subscription plan.
         </ResponseField>
-        <ResponseField name="leftOrderChars" type="number">
-            The number of TTS characters you left without your subscription plan.
+        <ResponseField name="usedOrderChars" type="number">
+            The number of TTS characters you have used without your subscription plan.
         </ResponseField>
         <ResponseField name="totalOrderChars" type="number">
             The number of TTS characters you have purchased without your subscription plan.
@@ -65,7 +65,7 @@ Includes specific data.
 <RequestExample>
 
 ```bash Example Request
-curl --location 'https://api.myvocal.ai/sound_clone/api/v1/user/benefit' \
+curl --location 'https://api.myvocal.ai/sound_clone/api/v1/user/info' \
 --header 'accessKey: xxxx'
 ```
 
@@ -82,11 +82,11 @@ curl --location 'https://api.myvocal.ai/sound_clone/api/v1/user/benefit' \
         "status": "active",
         "resetInDays": 2,
         "benefit": {
-            "leftVoices": 146,
+            "usedVoices": 146,
             "totalVoices": 150,
-            "leftMonthlyChars": 3498604,
+            "usedMonthlyChars": 3498604,
             "totalMonthlyChars": 3500000,
-            "leftOrderChars": 0,
+            "usedOrderChars": 0,
             "totalOrderChars": 0
         }
     }
