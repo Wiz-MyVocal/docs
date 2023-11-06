@@ -1,6 +1,6 @@
 ---
 title: "Delete Voice"
-api: "DELETE https://api.myvocal.ai/sound_clone/api/v1/voices-tts/{voiceId}"
+api: "DELETE https://api.myvocal.ai/sound_clone/api/v1/voices/{voiceId}"
 description: "Delete a custom voice by voiceId."
 ---
 ### Header
@@ -25,9 +25,9 @@ description: "Delete a custom voice by voiceId."
 <RequestExample>
 
 ```bash Example Request
-curl --location --globoff --request DELETE 'https://api.myvocal.ai/sound_clone/api/v1/voices-tts/{voiceId}' \
---header 'Content-Type: application/json' \
---header 'accessKey: xxxx'
+curl --location --request DELETE 'https://api.myvocal.ai/sound_clone/api/v1/voices/7812' \
+--header 'accessKey: xxx' \
+--header 'Content-Type: application/json' 
 ```
 </RequestExample>
 

@@ -21,36 +21,36 @@ description: "This endpoint gets or creates a new user."
 <ResponseField name="data" type="object">
 Includes specific data.
     <Expandable title="Toggle object">
-        <ResponseField name="subscriptionPlan" type="string">
+        <ResponseField name="plan" type="string">
             Your current subscription plan.
         </ResponseField>
-        <ResponseField name="subscriptionStatus" type="string">
+        <ResponseField name="status" type="string">
          <div>Your current subscription status:</div>
          <div>If you haven't cancel your subsciption, the status will be "active", </div>
          <div>If you have cancelled your subcription, the status will be "cancellation upon expiration" before the subscription expired.</div>
         </ResponseField>
-        <ResponseField name="subscriptionResetInDays" type="number">
+        <ResponseField name="resetInDays" type="number">
             <div>If you haven't cancelled your subscription, this parameter means the countdown days for your plan benefits to be updated.</div>
             <div>If you have cancelled your subscription, this parameter means the countdown days for your plan to be downgraded to a free user.</div>
         </ResponseField>
         <ResponseField name="benefit" type="object">
         <Expandable title="Toggle object">
-        <ResponseField name="customVoiceGenerated" type="number">
-            The number of custom voices you have created through the website or API.
+        <ResponseField name="leftVoices" type="number">
+            The number of custom voices you left through the website or API.
         </ResponseField>
-        <ResponseField name="customVoiceLimit" type="number">
+        <ResponseField name="totalVoices" type="number">
             The maximum number of custom voices you can create with your subscription plan.
         </ResponseField>
-        <ResponseField name="planTtsCharactersUsed" type="number">
-            The number of TTS characters you have used within your subscription plan.
+        <ResponseField name="leftMonthlyChars" type="number">
+            The number of TTS characters you left  within your subscription plan.
         </ResponseField>
-        <ResponseField name="planTtsCharacters" type="number">
+        <ResponseField name="totalMonthlyChars" type="number">
             The maximum number of TTS characters within your subscription plan.
         </ResponseField>
-        <ResponseField name="additionalTtsCharactersUsed" type="number">
-            The number of TTS characters you have used without your subscription plan.
+        <ResponseField name="leftOrderChars" type="number">
+            The number of TTS characters you left without your subscription plan.
         </ResponseField>
-        <ResponseField name="additionalTtsCharacters" type="number">
+        <ResponseField name="totalOrderChars" type="number">
             The number of TTS characters you have purchased without your subscription plan.
         </ResponseField>
         </Expandable>
@@ -65,8 +65,7 @@ Includes specific data.
 <RequestExample>
 
 ```bash Example Request
-curl --location --request GET 'https://api.myvocal.ai/sound_clone/api/v1/user/benefit' \
---header 'Content-Type: application/json' \
+curl --location 'https://api.myvocal.ai/sound_clone/api/v1/user/benefit' \
 --header 'accessKey: xxxx'
 ```
 
@@ -76,19 +75,19 @@ curl --location --request GET 'https://api.myvocal.ai/sound_clone/api/v1/user/be
 
 ```json  200（success）
 {
-	"code": 1,
-	"message": "Success",
-	 "data":{
-        "subscriptionPlan":"Pro",
-        "subscriptionStatus":"active",
-        "subscriptionResetInDays":20,
-        "benefit":{
-            "customVoiceGenerated":100,
-            "customVoiceLimit":200,
-            "planTtsCharactersUsed":300,
-            "planTtsCharacters":400,
-            "additionalTtsCharactersUsed":100,
-            "additionalTtsCharacters":1000
+    "code": 1,
+    "message": "Success",
+    "data": {
+        "plan": "Business",
+        "status": "active",
+        "resetInDays": 2,
+        "benefit": {
+            "leftVoices": 146,
+            "totalVoices": 150,
+            "leftMonthlyChars": 3498604,
+            "totalMonthlyChars": 3500000,
+            "leftOrderChars": 0,
+            "totalOrderChars": 0
         }
     }
 }

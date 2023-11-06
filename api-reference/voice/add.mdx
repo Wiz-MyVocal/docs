@@ -1,6 +1,6 @@
 ---
 title: "Add Voice for TTS"
-api: "POST https://docs.myvocal.ai/sound_clone/api/v1/voices-tts"
+api: "POST https://docs.myvocal.ai/sound_clone/api/v1/voices/tts"
 header: "content-type: multipart/form-data"
 description: "Create a new custom voice for Text-to-Speech function(❗❗❗File-related interfaces are not supported, please use interface tools for requests.)"
 ---
@@ -39,7 +39,7 @@ Includes specific data.
 
 <Expandable title="Toggle object">
 
-<ResponseField name="voiceId" type="string">
+<ResponseField name="id" type="string">
   When you need to use TTS or other features, voiceId needs to be provided.
 </ResponseField>
 
@@ -50,12 +50,10 @@ Includes specific data.
 <RequestExample>
 
 ```bash Example Request
-curl --location --request POST 'https://api.myvocal.ai/sound_clone/api/v1/voices-tts' \
---header 'Content-Type: multipart/form-data' \
---header 'accessKey: apiKey' \
---form 'voiceName="MyVocal"' \
---form 'files=@"/Users/xxx/1.wav"' \
---form 'files=@"/Users/xxx/2.wav"'
+curl --location 'https://api.myvocal.ai/sound_clone/api/v1/voices/tts' \
+--header 'accessKey: xxx' \
+--form 'files=@"xxx/xxx.mp3"' \
+--form 'name="111"'
 ```
 </RequestExample>
 
@@ -63,11 +61,11 @@ curl --location --request POST 'https://api.myvocal.ai/sound_clone/api/v1/voices
 
 ```json  200（success）
 {
-  "code": 1,
-  "message": "Success",
-  "data": {
-    "voiceId": 3
-  }
+    "code": 1,
+    "message": "Success",
+    "data": {
+        "id": "7812"
+    }
 }
 ```
 ```json  200（fail）

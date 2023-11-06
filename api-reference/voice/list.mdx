@@ -1,6 +1,6 @@
 ---
 title: "Get Voices"
-api: "GET https://api.myvocal.ai/sound_clone/api/v1/voices-tts"
+api: "GET https://api.myvocal.ai/sound_clone/api/v1/voices"
 description: "Return metadata about a specific voice."
 ---
 ### Header
@@ -24,20 +24,20 @@ Includes specific data.
         <ResponseField name="voices" type="list">
             All available voices under the current API-Key, including Premade voices provided by Myvocal, and Custom voices you created on the website and in the API.
             <Expandable title="Toggle object">
-            <ResponseField name="voiceId" type="string" >
+            <ResponseField name="id" type="string" >
                 Your voiceId
             </ResponseField>
             <ResponseField name="name" type="string" >
                 Your voiceName
             </ResponseField>
-            <ResponseField name="voiceType" type="string" >
+            <ResponseField name="type" type="string" >
                 <div>cloned: create the voice by recording online or upload audio files.</div>
                 <div>designed: create the voice by voice design</div>
             </ResponseField>
-            <ResponseField name="voiceFeature" type="string" >
-            Text-to-Speech or AI Cover
+            <ResponseField name="feature" type="string" >
+            <b>text-to-speech</b> or <b>ai-cover</b>
             </ResponseField>
-            <ResponseField name="voiceGenerateSource" type="string" >
+            <ResponseField name="channel" type="string" >
             web or api
             </ResponseField>
             </Expandable>
@@ -47,9 +47,8 @@ Includes specific data.
 <RequestExample>
 
 ```bash Example Request
-curl --location 'https://api.myvocal.ai/sound_clone/api/v1/voices-tts' \
---header 'Content-Type: application/json' \
---header 'accessKey: xxxx'
+curl --location 'https://api.myvocal.ai/sound_clone/api/v1/voices' \
+--header 'accessKey: ffccfa079cd74c00963a2d65d38ef462'
 ```
 
 </RequestExample>
@@ -58,19 +57,17 @@ curl --location 'https://api.myvocal.ai/sound_clone/api/v1/voices-tts' \
 
 ```json  200（success）
 {
-	"code": 1,
-	"message": "Success",
-	"data": {
-		"voices": [{
-				"voiceId": "3",
-				"name": "name1",
-				"voiceType": "cloned",
-				"voiceFeature": "tts"
-                "voiceGenerateSource": "web"
-			}
-
-		]
-	}
+    "code": 1,
+    "message": "Success",
+    "data": [
+        {
+            "id": "7789",
+            "name": "FirstClonedVoice",
+            "type": "cloned",
+            "feature": "text-to-speech",
+            "channel": "web"
+        }
+    ]
 }
 ```
 ```json  200（fail）
