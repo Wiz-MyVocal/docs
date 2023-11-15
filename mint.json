@@ -38,8 +38,8 @@
     {
       "group": "Text-to-Speech",
       "pages": [
-        "api-reference/tts/get",
-        "api-reference/tts/getStream"
+        "api-reference/tts/tts",
+        "api-reference/tts/ttsStream"
       ]
     },
     {
