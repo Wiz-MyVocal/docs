@@ -28,8 +28,8 @@
       "pages": [
         "api-reference/voice/add",
         "api-reference/voice/edit",
-        "api-reference/voice/pincerVoice",
-        "api-reference/voice/savePincerVoice",
+        "api-reference/voice/designVoice",
+        "api-reference/voice/designVoiceSave",
         "api-reference/voice/list",
         "api-reference/voice/updateVoiceName",
         "api-reference/voice/delete"
@@ -45,9 +45,9 @@
     {
       "group": "History",
       "pages": [
-        "api-reference/history/getTTSHistory",
-        "api-reference/history/downloadTTSHistoryItem",
-        "api-reference/history/deleteTTSHistoryItem"
+        "api-reference/history/ttsList",
+        "api-reference/history/ttsListUrl",
+        "api-reference/history/deleteTTS"
       ]
     },
     {
@@ -56,6 +56,7 @@
         "api-reference/user/getInfo"
       ]
     }
+
   ],
   "footerSocials": {
     "youtube": "https://www.youtube.com/@myvocalai"
