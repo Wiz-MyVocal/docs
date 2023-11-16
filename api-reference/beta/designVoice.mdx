@@ -1,0 +1,80 @@
+---
+title: "Design Voice for TTS_Generate"
+api: "POST https://docs.myvocal.ai/sound_clone/api/v1/voices/design"
+description: "Create a new voice without any audio files.(❗❗❗File-related interfaces are not supported, please use interface tools for requests.)"
+---
+
+### Header
+<ParamField header="accessKey"   type="string" required>
+  You can copy your api-key on https://www.myvocal.ai/profile after you have subscribed to Pro or Business Plan.
+</ParamField>
+
+### Body
+<ParamField body="text" type="string" required>
+  Please provide a piece of English content that is no less than 100 characters and no more than 500 characters for the purpose of generating a trial audio.
+</ParamField>
+<ParamField body="gender" type="string" required>
+<div><b>male</b></div>
+<div><b>female</b></div>
+</ParamField>
+
+<ParamField body="accent" type="string" required>
+<div><b>american</b></div>
+<div><b>british</b></div>
+<div><b>african</b></div>
+<div><b>australian</b></div>
+<div><b>indian</b></div>
+</ParamField>
+
+<ParamField body="age" type="string" required>
+<div><b>middle_aged</b></div>
+<div><b>young</b></div>
+<div><b>old</b></div>
+
+</ParamField>
+<ParamField body="accentStrength" type="string" required>
+  The parameter requirement is a decimal between 0 and 2, with increments of 0.1.
+</ParamField>
+
+
+### Response
+### Header
+<ResponseField name="Content-Type"  type="string" >
+    If the request is successful, this value in the callback is <b>audio/mpeg</b>.
+</ResponseField>
+This response is stream.
+<ResponseField name="designId"   type="string" >
+    The designId included in the callback when you use Design Voice for TTS_Generate
+</ResponseField>
+### Body
+
+
+<RequestExample>
+
+```bash Example Request
+curl --location 'https://uat.myvocal.ai/sound_clone/api/v1/voices/design' \
+--header 'accessKey: xxx' \
+--header 'Content-Type: application/json' \
+--data '{
+	"text": "The client interacts with users through mobile devices, while the server is responsible for data  in",
+	"gender": "female",
+	"accent": "indian",
+	"age": "old",
+	"accentStrength": 1.4
+}'
+```
+</RequestExample>
+
+<ResponseExample>
+
+```json  200（success）
+This response is stream.
+```
+```json  200（fail）
+{
+  "code": -1,
+  "message": "error msg",
+}
+```
+
+</ResponseExample>

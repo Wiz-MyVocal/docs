@@ -1,0 +1,78 @@
+---
+title: "Get TTS URL"
+api: "POST https://api.myvocal.ai/sound_clone/api/v1/tts/query"
+description: "Get tts history audio url ."
+---
+### Header
+<ParamField header="accessKey"   type="string" required>
+  You can copy your api-key on https://www.myvocal.ai/profile after you have subscribed to Pro or Business Plan.
+</ParamField>
+
+### Body
+<ParamField body="ids" type="array" required>
+ You can provide up to 1,000 Ids at a time.
+</ParamField>
+
+### Response
+
+<ResponseField name="code" type="number">
+  Indicates whether the call was successful. 1 if successful.
+</ResponseField>
+
+<ResponseField name="message" type="string" >
+  When an exception occurs, specific exception information will be provided in the message.
+</ResponseField>
+
+<ResponseField name="data" type="array">
+  <Expandable title="Toggle object">
+   
+  <ResponseField name="id" type="string">
+      Your tts id.
+  </ResponseField>
+   <ResponseField name="url" type="string">
+     The audio file url corresponding to ttsId.
+  </ResponseField>
+  </Expandable>
+</ResponseField>
+
+<RequestExample>
+
+```bash Example Request
+curl --location 'https://api.myvocal.ai/sound_clone/api/v1/tts/query' \
+--header 'accessKey: xxx' \
+--header 'Content-Type: application/json' \
+--data '{
+	"ids":["22","13"] 
+}'
+```
+
+</RequestExample>
+
+
+
+<ResponseExample>
+
+```json  200（success）
+{
+    "code": 1,
+    "message": "Success",
+    "data": [
+        {
+            "id": "2195",
+            "url": "xxxx"
+        },
+        {
+            "id": "2196",
+            "url": "xxxx"
+        }
+    ]
+}
+```
+```json  200（fail）
+{
+  "code": -1,
+  "message": "error msg",
+}
+```
+
+</ResponseExample>

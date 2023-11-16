@@ -1,0 +1,79 @@
+---
+title: "Design Voice for TTS_Save"
+api: "POST https://api.myvocal.ai/sound_clone/api/v1/voices/design/save"
+description: "Save the voice you design as voice_id "
+---
+
+### Header
+<ParamField header="accessKey"   type="string" required>
+  You can copy your api-key on https://www.myvocal.ai/profile after you have subscribed to Pro or Business Plan.
+</ParamField>
+
+### Body
+<ParamField body="name" type="string" required>
+Please do not exceed 32 characters in length.
+</ParamField>
+<ParamField body="designId" type="string" required>
+The designId included in the callback when you use Design Voice for TTS_Generate
+</ParamField>
+
+
+
+
+
+### Response
+<ResponseField name="code" type="number">
+  Indicates whether the call was successful. 1 if successful.
+</ResponseField>
+
+<ResponseField name="message" type="string">
+  When an exception occurs, specific exception information will be provided in the message.
+</ResponseField>
+
+<ResponseField name="data" type="object">
+
+Includes specific data.
+
+<Expandable title="Toggle object">
+
+<ResponseField name="voiceId" type="string">
+  When you need to use TTS or other features, voiceId needs to be provided.
+</ResponseField>
+
+</Expandable>
+
+</ResponseField>
+
+
+<RequestExample>
+
+```bash Example Request
+curl --location 'https://api.myvocal.ai/sound_clone/api/v1/voices/design/save' \
+--header 'accessKey: xxxx' \
+--header 'Content-Type: application/json' \
+--data '{
+	"designId": "cbadQRR3tRp9QmikK8jv",
+	"name": "test"
+}'
+```
+</RequestExample>
+
+<ResponseExample>
+
+```json  200（success）
+{
+    "code": 1,
+    "message": "Success",
+    "data": {
+        "id": "7814"
+    }
+}
+```
+```json  200（fail）
+{
+  	"code": -1,
+	"message": "error msg",
+}
+```
+
+</ResponseExample>

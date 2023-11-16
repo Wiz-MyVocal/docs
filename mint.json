@@ -55,6 +55,12 @@
       "pages": [
         "api-reference/user/getInfo"
       ]
+    },
+    {
+      "group": "beta",
+      "pages": [
+        "api-reference/beta/getInfo"
+      ]
     }
 
   ],

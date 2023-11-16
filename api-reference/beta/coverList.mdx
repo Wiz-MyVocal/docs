@@ -1,0 +1,80 @@
+---
+title: "Get Voices"
+api: "GET https://api.myvocal.ai/sound_clone/api/v1/voices"
+description: "Return metadata about a specific voice."
+---
+### Header
+<ParamField header="accessKey"   type="string" required>
+  You can copy your api-key on https://www.myvocal.ai/profile after you have subscribed to Pro or Business Plan.
+</ParamField>
+
+
+### Response
+<ResponseField name="code" type="number" required>
+  Indicates whether the call was successful. 1 if successful.
+</ResponseField>
+
+<ResponseField name="message" type="string" >
+  When an exception occurs, specific exception information will be provided in the message.
+</ResponseField>
+
+<ResponseField name="data" type="object" >
+Includes specific data.
+    <Expandable title="Toggle object">
+        <ResponseField name="voices" type="list">
+            All available voices under the current API-Key, including Premade voices provided by Myvocal, and Custom voices you created on the website and in the API.
+            <Expandable title="Toggle object">
+            <ResponseField name="id" type="string" >
+                Your voiceId
+            </ResponseField>
+            <ResponseField name="name" type="string" >
+                Your voiceName
+            </ResponseField>
+            <ResponseField name="type" type="string" >
+                <div><b>cloned</b>: create the voice by recording online or upload audio files.</div>
+                <div><b>designed</b>: create the voice by voice design</div>
+            </ResponseField>
+            <ResponseField name="feature" type="string" >
+            <b>text-to-speech</b> or <b>ai-cover</b>
+            </ResponseField>
+            <ResponseField name="channel" type="string" >
+            <b>web</b> or <b>api</b>
+            </ResponseField>
+            </Expandable>
+        </ResponseField>
+    </Expandable>
+</ResponseField>
+<RequestExample>
+
+```bash Example Request
+curl --location 'https://api.myvocal.ai/sound_clone/api/v1/voices' \
+--header 'accessKey: ffccfa079cd74c00963a2d65d38ef462'
+```
+
+</RequestExample>
+
+<ResponseExample>
+
+```json  200（success）
+{
+    "code": 1,
+    "message": "Success",
+    "data": [
+        {
+            "id": "7789",
+            "name": "FirstClonedVoice",
+            "type": "cloned",
+            "feature": "text-to-speech",
+            "channel": "web"
+        }
+    ]
+}
+```
+```json  200（fail）
+{
+  "code": -1,
+  "message": "error msg",
+}
+```
+
+</ResponseExample>

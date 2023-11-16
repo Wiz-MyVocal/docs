@@ -1,0 +1,75 @@
+---
+title: "Add Voice for TTS"
+api: "POST https://docs.myvocal.ai/sound_clone/api/v1/voices/tts"
+header: "content-type: multipart/form-data"
+description: "Create a new custom voice for Text-to-Speech function(❗❗❗File-related interfaces are not supported, please use interface tools for requests.)"
+---
+
+### Header
+<ParamField header="accessKey"   type="string" required>
+  You can copy your api-key on https://www.myvocal.ai/profile after you have subscribed to Pro or Business Plan.
+</ParamField>
+
+### Body
+
+<ParamField body="name" type="string" required>
+  Please do not exceed 32 characters in length.
+</ParamField>
+<ParamField body="files" type="Files" required>
+  Please provide mp3/wav/m4a files. A single file cannot exceed 10MB, and up to 24 files can be uploaded.
+</ParamField>
+
+
+### Response
+
+<ResponseField name="code" type="number">
+  Indicates whether the call was successful. 1 if successful.
+</ResponseField>
+
+<ResponseField name="message" type="string">
+  When an exception occurs, specific exception information will be provided in the message.
+</ResponseField>
+
+<ResponseField name="data" type="object">
+
+Includes specific data.
+
+<Expandable title="Toggle object">
+
+<ResponseField name="id" type="string">
+  When you need to use TTS or other features, voiceId needs to be provided.
+</ResponseField>
+
+</Expandable>
+
+</ResponseField>
+
+<RequestExample>
+
+```bash Example Request
+curl --location 'https://api.myvocal.ai/sound_clone/api/v1/voices/tts' \
+--header 'accessKey: xxx' \
+--form 'files=@"xxx/xxx.mp3"' \
+--form 'name="111"'
+```
+</RequestExample>
+
+<ResponseExample>
+
+```json  200（success）
+{
+    "code": 1,
+    "message": "Success",
+    "data": {
+        "id": "7812"
+    }
+}
+```
+```json  200（fail）
+{
+  "code": -1,
+  "message": "error msg",
+}
+```
+
+</ResponseExample>
