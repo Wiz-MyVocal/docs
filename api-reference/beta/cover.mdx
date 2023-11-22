@@ -1,21 +1,15 @@
 ---
-title: "Edit Voice for  AI Cover"
-api: "PUT https://docs.myvocal.ai/sound_clone/api/v1/voices/tts/{voiceId}"
-description: "Edit a custom voice created by you. You can upload more files to improve your voice."
+title: "Delete TTS"
+api: "DELETE https://api.myvocal.ai/sound_clone/api/v1/tts"
+description: "Delete up to 500 tts history items once by tts_id."
 ---
-
 ### Header
 <ParamField header="accessKey"   type="string" required>
   You can copy your api-key on https://www.myvocal.ai/profile after you have subscribed to Pro or Business Plan.
 </ParamField>
-
 ### Body
-
-<ParamField path="id" type="string" required>
-  Your voiceId
-</ParamField>
-<ParamField body="files" type="files" required>
-  Please provide mp3/wav/m4a files. A single file cannot exceed 10MB, and up to 24 files can be uploaded (including files provided when you add voice).
+<ParamField body="ids" type="array" required>
+ You can provide up to 500 Ids at a time.
 </ParamField>
 
 ### Response
@@ -32,15 +26,20 @@ description: "Edit a custom voice created by you. You can upload more files to i
 <RequestExample>
 
 ```bash Example Request
-curl --location --request PUT 'https://api.myvocal.ai/sound_clone/api/v1/voices/tts/7812' \
+curl --location --request DELETE 'https://api.myvocal.ai/sound_clone/api/v1/tts' \
 --header 'accessKey: xxx' \
---form 'files=@"xxx/xxx.mp3"'
+--header 'Content-Type: application/json' \
+--data '{
+	"ids":["2196","2195"] 
+}'
 ```
 </RequestExample>
 
 <ResponseExample>
 
 ```json  200（success）
+# success
+
 {
   "code": 1,
   "message": "Success",
@@ -52,5 +51,8 @@ curl --location --request PUT 'https://api.myvocal.ai/sound_clone/api/v1/voices/
   "message": "error msg",
 }
 ```
+
+
+
 
 </ResponseExample>

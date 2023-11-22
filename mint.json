@@ -26,8 +26,8 @@
     {
       "group": "Voice",
       "pages": [
-        "api-reference/voice/add",
-        "api-reference/voice/edit",
+        "api-reference/voice/addTTSVoice",
+        "api-reference/voice/editTTSVoice",
         "api-reference/voice/designVoice",
         "api-reference/voice/designVoiceSave",
         "api-reference/voice/list",
@@ -59,7 +59,13 @@
     {
       "group": "beta",
       "pages": [
-        "api-reference/beta/getInfo"
+        "api-reference/beta/addCoverVoice",
+        "api-reference/beta/editCoverVoice",
+        "api-reference/beta/cover",
+        "api-reference/beta/deleteCoverVoice",
+        "api-reference/beta/coverList",
+        "api-reference/beta/coverListUrl"
+
       ]
     }
 
