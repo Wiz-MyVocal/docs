@@ -1,6 +1,6 @@
 ---
 title: "Get AI Cover URL"
-api: "POST https://api.myvocal.ai/sound_clone/api/v1/tts/query"
+api: "POST https://api.myvocal.ai/sound_clone/api/v1/cover/query"
 description: "Get ai cover audio url."
 ---
 ### Header
@@ -38,14 +38,13 @@ description: "Get ai cover audio url."
 <RequestExample>
 
 ```bash Example Request
-curl --location 'https://api.myvocal.ai/sound_clone/api/v1/tts/query' \
+curl --location 'https://api.myvocal.ai/sound_clone/api/v1/cover/query' \
 --header 'accessKey: xxx' \
 --header 'Content-Type: application/json' \
 --data '{
 	"ids":["22","13"] 
 }'
 ```
-
 </RequestExample>
 
 

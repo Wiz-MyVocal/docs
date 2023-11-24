@@ -1,6 +1,6 @@
 ---
 title: "Delete AI Cover"
-api: "DELETE https://api.myvocal.ai/sound_clone/api/v1/tts"
+api: "DELETE https://api.myvocal.ai/sound_clone/api/v1/cover"
 description: "Delete up to 500 tts history items once by ai_cover_id."
 ---
 ### Header
@@ -23,10 +23,11 @@ description: "Delete up to 500 tts history items once by ai_cover_id."
 </ResponseField>
 
 
+
 <RequestExample>
 
 ```bash Example Request
-curl --location --request DELETE 'https://api.myvocal.ai/sound_clone/api/v1/tts' \
+curl --location --request DELETE 'https://api.myvocal.ai/sound_clone/api/v1/cover' \
 --header 'accessKey: xxx' \
 --header 'Content-Type: application/json' \
 --data '{
@@ -41,8 +42,15 @@ curl --location --request DELETE 'https://api.myvocal.ai/sound_clone/api/v1/tts'
 # success
 
 {
-  "code": 1,
-  "message": "Success",
+    "code": 1,
+    "message": "Success",
+    "data": {
+        "succeedIds": [],
+        "nonExistIds": [],
+        "unMatchIds": [
+            "203"
+        ]
+    }
 }
 ```
 ```json  200（fail）
