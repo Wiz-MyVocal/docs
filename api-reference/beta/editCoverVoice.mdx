@@ -1,6 +1,6 @@
 ---
 title: "Edit Voice for TTS"
-api: "POST https://docs.myvocal.ai/sound_clone/api/v1/voices/tts"
+api: "POST https://docs.myvocal.ai/sound_clone/api/v1/voices/vc/{voiceId}"
 header: "content-type: multipart/form-data"
 description: "Create a new custom voice for AI Cover feature(❗❗❗File-related interfaces are not supported, please use interface tools for requests.)"
 ---
@@ -11,8 +11,10 @@ description: "Create a new custom voice for AI Cover feature(❗❗❗File-relat
 </ParamField>
 
 ### Body
-
-<ParamField body="name" type="string" required>
+<ParamField path="id" type="string" required>
+  Your voiceId
+</ParamField>
+<ParamField body="callbackUrl" type="string" required>
   Please do not exceed 32 characters in length.
 </ParamField>
 <ParamField body="files" type="Files" required>
@@ -36,7 +38,7 @@ Includes specific data.
 
 <Expandable title="Toggle object">
 
-<ResponseField name="id" type="string">
+<ResponseField name="webhookId" type="string">
   When you need to use TTS or other features, voiceId needs to be provided.
 </ResponseField>
 
@@ -47,10 +49,10 @@ Includes specific data.
 <RequestExample>
 
 ```bash Example Request
-curl --location 'https://api.myvocal.ai/sound_clone/api/v1/voices/tts' \
+curl --location 'https://api.myvocal.ai/sound_clone/api/v1/voices/vc/123' \
 --header 'accessKey: xxx' \
 --form 'files=@"xxx/xxx.mp3"' \
---form 'name="111"'
+--form 'callbackUrl="111"'
 ```
 </RequestExample>
 
@@ -61,7 +63,7 @@ curl --location 'https://api.myvocal.ai/sound_clone/api/v1/voices/tts' \
     "code": 1,
     "message": "Success",
     "data": {
-        "id": "7812"
+        "webhookId": "7812"
     }
 }
 ```
