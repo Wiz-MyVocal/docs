@@ -46,15 +46,11 @@ Includes specific data.
             <ResponseField name="title" type="string" >
                 tts title
             </ResponseField>
-            <ResponseField name="text" type="string" >
-            tts content
-            </ResponseField>
+
             <ResponseField name="useChars" type="number" >
             character count of this TTS item.
             </ResponseField>
-            <ResponseField name="language" type="string" >
-            chosen language
-            </ResponseField>
+
             <ResponseField name="channel" type="string" >
             web or api
             </ResponseField>
@@ -90,16 +86,16 @@ curl --location 'https://api.myvocal.ai/sound_clone/api/v1/cover/list' \
             {
                 "voiceId": "458",
                 "voiceName": "QWERTYUIOPASD",
-                "coverId": "203",
-                "coverTitle": "Beyonce T4",
+                "id": "203",
+                "title": "Beyonce T4",
                 "useChars": 2616,
                 "channel": "web"
             },
             {
                 "voiceId": "452",
                 "voiceName": "@#$%^&Z",
-                "coverId": "202",
-                "coverTitle": "sd",
+                "id": "202",
+                "title": "sd",
                 "useChars": 2592,
                 "channel": "api"
             }
