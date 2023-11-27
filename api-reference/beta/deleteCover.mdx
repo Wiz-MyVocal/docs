@@ -14,12 +14,34 @@ description: "Delete up to 500 tts history items once by ai_cover_id."
 
 ### Response
 
-<ResponseField name="code" type="number" >
+<ResponseField name="code" type="number">
   Indicates whether the call was successful. 1 if successful.
 </ResponseField>
 
-<ResponseField name="message" type="string" >
+<ResponseField name="message" type="string">
   When an exception occurs, specific exception information will be provided in the message.
+</ResponseField>
+
+<ResponseField name="data" type="object">
+
+Includes specific data.
+
+<Expandable title="Toggle object">
+
+<ResponseField name="succeedIds" type="array">
+  删除成功 id
+</ResponseField>
+
+<ResponseField name="nonExistIds" type="array">
+不存在的 id
+</ResponseField>
+
+<ResponseField name="unMatchIds" type="array">
+ 存在但是创建渠道不匹配的 id
+</ResponseField>
+
+</Expandable>
+
 </ResponseField>
 
 
