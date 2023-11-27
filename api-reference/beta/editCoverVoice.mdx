@@ -15,7 +15,7 @@ description: "Create a new custom voice for AI Cover feature(❗❗❗File-relat
   Your voiceId
 </ParamField>
 <ParamField body="callbackUrl" type="string" required>
-  Please do not exceed 32 characters in length.
+   To receive the audio returned after processing is completed.
 </ParamField>
 <ParamField body="files" type="Files" required>
   Please provide mp3/wav/m4a files. A single file cannot exceed 10MB, and up to 24 files can be uploaded.
@@ -39,7 +39,7 @@ Includes specific data.
 <Expandable title="Toggle object">
 
 <ResponseField name="webhookId" type="string">
-  When you need to use TTS or other features, voiceId needs to be provided.
+   When the request is successfully sent, a webhoodId will be synchronously returned. The same information will also be called back in the callbackUrl, which is used to correlate the request and the response.
 </ResponseField>
 
 </Expandable>
