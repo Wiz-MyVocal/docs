@@ -9,4 +9,45 @@ Please provide a callback URL and ensure that the callback URL provided is consi
 ### Response
 When an asynchronous request is sent successfully, we will immediately provide a webhookId. When a callback is made, this webhookId will also be included in the callback URL. You can use the webhookId to associate the request with the callback.
 
+<ResponseField name="webhookId" type="string">
+  回调 id
+</ResponseField>
+
+<ResponseField name="webhookType" type="string" >
+  回调类型
+  训练翻唱发音人: TRAIN_COVER_SPEAKER
+  编辑翻唱发音人:EDIT_COVER_SPEAKER
+  创建翻唱:COVER_SONG
+</ResponseField>
+
+<ResponseField name="status" type="string" >
+  状态 SUCCESS 成功
+  FAILURE 失败
+</ResponseField>
+
+<ResponseField name="summary" type="string" >
+描述
+</ResponseField>
+
+<ResponseField name="data" type="Object" >
+  业务数据
+</ResponseField>
 ### Samples
+```json  200（success）
+{
+    "webhookId":"1700189306ffhdkejwcsk2",
+    "webhookType":"TRAIN_COVER_SPEAKER",    
+    "status":"SUCCESS",  
+    "summary":"Clone training success.",  
+    "data":{
+        "id":"100"
+    }
+}
+```
+```json  200（fail）
+{
+    "webhookId":"1700189306ffhdkejwcsk2",
+    "webhookType":"TRAIN_COVER_SPEAKER",    
+    "status":"FAILURE",  
+    "summary":"Clone training failed."
+}
