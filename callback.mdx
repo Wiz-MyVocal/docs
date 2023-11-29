@@ -1,0 +1,57 @@
+## About Callback
+
+<p>Some of the API services provided by this product require asynchronous callbacks due to longer processing times.</p>
+<p>To ensure that information is returned normally and accurately, a callback URL needs to be provided in the input parameters.</p>
+
+### Request
+Please provide a callback URL and ensure that the callback URL provided is consistent across different scenarios. If the callback URL varies, there may be inconsistencies between the callback URL used during the callback and the callback URL you provided at the time of the request.
+
+### Response
+When an asynchronous request is sent successfully, we will immediately provide a webhookId. When a callback is made, this webhookId will also be included in the callback URL. You can use the webhookId to associate the request with the callback.
+
+<ResponseField name="webhookId" type="string">
+  When the request is successfully sent, a webhoodId will be synchronously returned. The same information will also be called back in the callbackUrl, which is used to correlate the request and the response.
+</ResponseField>
+
+<ResponseField name="webhookType" type="string" >
+
+Add an AI Cover Voice: TRAIN_COVER_SPEAKER
+
+Improve an AI Cover Voice: EDIT_COVER_SPEAKER
+
+Create AI Cover: COVER_SONG
+</ResponseField>
+
+<ResponseField name="status" type="string" >
+The status of this request
+<p>SUCCESS</p>
+<p>FAILURE</p>
+
+</ResponseField>
+
+<ResponseField name="summary" type="string" >
+描述
+</ResponseField>
+
+<ResponseField name="data" type="Object" >
+  业务数据
+</ResponseField>
+### Samples
+```json  200（success）
+{
+    "webhookId":"1700189306ffhdkejwcsk2",
+    "webhookType":"TRAIN_COVER_SPEAKER",    
+    "status":"SUCCESS",  
+    "summary":"Clone training success.",  
+    "data":{
+        "id":"100"
+    }
+}
+```
+```json  200（fail）
+{
+    "webhookId":"1700189306ffhdkejwcsk2",
+    "webhookType":"TRAIN_COVER_SPEAKER",    
+    "status":"FAILURE",  
+    "summary":"Clone training failed."
+}
