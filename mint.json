@@ -41,6 +41,8 @@
         "api-reference/voice/editTTSVoice",
         "api-reference/voice/designVoice",
         "api-reference/voice/designVoiceSave",
+        "api-reference/voice/addCoverVoice",
+        "api-reference/voice/editCoverVoice",
         "api-reference/voice/list",
         "api-reference/voice/updateVoiceName",
         "api-reference/voice/delete"
@@ -54,29 +56,27 @@
       ]
     },
     {
+      "group": "AI Cover",
+      "pages": [
+        "api-reference/cover/cover"
+      ]
+    },
+    {
       "group": "History",
       "pages": [
         "api-reference/history/ttsList",
         "api-reference/history/ttsListUrl",
-        "api-reference/history/deleteTTS"
+        "api-reference/history/deleteTTS",
+        "api-reference/history/coverList",
+        "api-reference/history/coverListUrl",
+        "api-reference/history/deleteCoverVoice"
+
       ]
     },
     {
       "group": "User",
       "pages": [
         "api-reference/user/getInfo"
-      ]
-    },
-    {
-      "group": "beta",
-      "pages": [
-        "api-reference/beta/addCoverVoice",
-        "api-reference/beta/editCoverVoice",
-        "api-reference/beta/cover",
-        "api-reference/beta/deleteCoverVoice",
-        "api-reference/beta/coverList",
-        "api-reference/beta/coverListUrl"
-
       ]
     }
 
