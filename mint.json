@@ -69,7 +69,7 @@
         "api-reference/history/deleteTTS",
         "api-reference/history/coverList",
         "api-reference/history/coverListUrl",
-        "api-reference/history/deleteCoverVoice"
+        "api-reference/history/deleteCover"
 
       ]
     },
