@@ -22,7 +22,18 @@
     "name": "Home Page",
     "url": "https://www.myvocal.ai"
   },
+  "anchors": [
+    {
+      "name": "API Reference",
+      "icon": "rectangle-terminal",
+      "url": "api-reference"
+    }
+  ],
   "navigation": [
+    {
+      "group": "",
+      "pages": ["_snippets/introduction", "_snippets/callback"]
+    },
     {
       "group": "Voice",
       "pages": [
