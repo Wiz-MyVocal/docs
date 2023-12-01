@@ -2,7 +2,11 @@
 <p>To ensure that information is returned normally and accurately, a callback URL needs to be provided in the input parameters.</p>
 
 ### Request
-Please provide a callback URL and ensure that the callback URL provided is consistent across different scenarios. If the callback URL varies, there may be inconsistencies between the callback URL used during the callback and the callback URL you provided at the time of the request.
+<p>Please provide a callback URL and ensure that the callback URL provided is consistent across different scenarios.</p>
+
+<p>Please make sure that the url you provide is accessible to the public network and that the request type is <b>POST</b>.</p>
+
+<p>If the callback URL varies, there may be inconsistencies between the callback URL used during the callback and the callback URL you provided at the time of the request.</p>
 
 ### Response
 When an asynchronous request is sent successfully, we will immediately provide a webhookId. When a callback is made, this webhookId will also be included in the callback URL. You can use the webhookId to associate the request with the callback.
