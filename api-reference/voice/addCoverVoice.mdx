@@ -16,7 +16,9 @@ description: "Create a new custom voice for AI Cover feature.(❗❗❗File-rela
   Please do not exceed 32 characters in length.
 </ParamField>
 <ParamField body="files" type="Files" required>
-  Please provide mp3/wav/m4a files. A single file cannot exceed 10MB, and up to 25 files can be uploaded.
+  <p>Please provide mp3/wav/m4a files.</p>
+  <p>A single file cannot exceed 10MB, and up to 25 files can be uploaded.</p>
+  <p>Please ensure that the total effective duration of the audio (including the parts with human voice, excluding the silent parts) is longer than 1 minute.</p>
 </ParamField>
 <ParamField body="callbackUrl" type="string" required>
    To receive the audio returned after processing is completed.
